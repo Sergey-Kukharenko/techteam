@@ -1,0 +1,35 @@
+{
+  "name": "landing-selfemployed",
+  "private": true,
+  "type": "module",
+  "scripts": {
+    "build": "nuxt build",
+    "dev": "nuxt dev",
+    "generate": "nuxt generate",
+    "preview": "nuxt preview",
+    "postinstall": "nuxt prepare"
+  },
+  "workspaces": [
+    "./packages/*"
+  ],
+  "overrides": {
+    "vue": "^3.3.8"
+  },
+  "devDependencies": {
+    "@nuxt/devtools": "latest",
+    "@nuxt/image": "^1.1.0",
+    "@pinia/nuxt": "^0.5.1",
+    "nuxt": "^3.8.1",
+    "sass": "^1.69.5",
+    "vue": "^3.3.8",
+    "vue-router": "^4.2.5"
+  },
+  "dependencies": {
+    "@ga/icons": "*",
+    "@ga/shared-browser": "*",
+    "bem-cn-lite": "^4.1.0",
+    "lodash-es": "^4.17.21",
+    "pinia": "^2.1.7",
+    "scroll-lock": "^2.1.5"
+  }
+}

@@ -1,0 +1,28 @@
+FROM mcs-registry.ga.loc/docker.io/library/node:18.15-alpine3.17 as builder
+
+WORKDIR /usr/src/app
+
+RUN apk add --no-cache \
+        python3 \
+        build-base \
+        git \
+        bash \
+        gettext
+
+# Доставка кода в контейнер
+COPY ./ ./
+RUN npm ci --cache .npm
+
+# Билд
+RUN npm run build
+# RUN npm prune --production
+
+FROM mcs-registry.ga.loc/docker.io/library/node:18.15-alpine3.17
+WORKDIR /usr/src/app
+
+# Доставка ранее собранного кода в контейнер
+COPY --from=builder /usr/src/app  .
+
+EXPOSE 3000
+RUN { test -e /.npm || mkdir /.npm ;} && chown -R 65534:65534 /.npm
+CMD  ["npm", "run", "preview"]

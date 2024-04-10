@@ -1,0 +1,101 @@
+#{$block}_view_line {
+  #{$block}__line,
+  #{$block}__line::after,
+  #{$block}__line::before {
+    position: absolute;
+
+    top: 0;
+    right: 0;
+    bottom: 0;
+    left: 0;
+
+    animation-timing-function: $line-animation-timing-function;
+    animation-duration: $line-animation-duration;
+    animation-iteration-count: infinite;
+  }
+
+  #{$block}__line {
+    width: var(--spinner-line-width);
+    height: var(--spinner-line-height);
+
+    min-width: $line-min-width;
+    max-width: $line-max-width;
+
+    margin-top: auto;
+    margin-right: auto;
+    margin-bottom: auto;
+    margin-left: auto;
+
+    transform-origin: 100% 0;
+
+    animation-name: #{$name}-line-container;
+
+    backface-visibility: hidden;
+    will-change: transform;
+  }
+
+  #{$block}__line::after,
+  #{$block}__line::before {
+    content: '';
+
+    display: block;
+
+    background: currentcolor;
+
+    transform-origin: 0 0;
+  }
+
+  #{$block}__line::before {
+    opacity: 0;
+
+    animation-name: #{$name}-line-1;
+  }
+
+  #{$block}__line::after {
+    opacity: 1;
+
+    animation-name: #{$name}-line-2;
+  }
+}
+
+@keyframes #{$name}-line-container {
+  0% {
+    transform: scaleX(0);
+  }
+
+  6%,
+  50% {
+    transform: scaleX(1);
+  }
+
+  100% {
+    transform: scaleX(0);
+  }
+}
+
+@keyframes #{$name}-line-1 {
+  0% {
+    transform: scaleX(0);
+  }
+
+  25%,
+  100% {
+    transform: scaleX(1);
+  }
+}
+
+@keyframes #{$name}-line-2 {
+  0%,
+  25% {
+    transform: scaleX(0);
+  }
+
+  50%,
+  94% {
+    transform: scaleX(1);
+  }
+
+  100% {
+    transform: scaleX(0);
+  }
+}

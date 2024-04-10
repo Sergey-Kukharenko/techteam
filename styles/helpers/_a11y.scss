@@ -1,0 +1,60 @@
+@function fn-add-minuses-to-values($values) {
+  $result: '';
+
+  @each $value in $values {
+    $result: #{$result} #{-$value};
+  }
+
+  @return $result;
+}
+
+@mixin a11y-clickable-area-set($position, $offsets: 0) {
+  & {
+    position: $position;
+
+    z-index: 0;
+  }
+
+  &::before {
+    content: '';
+
+    position: absolute;
+
+    z-index: -1;
+
+    top: 0;
+    right: 0;
+    bottom: 0;
+    left: 0;
+
+    // строка для отладки
+    // background: rgba(255, 0, 0, .5);
+
+    cursor: inherit;
+
+    @if $offsets {
+      margin: fn-add-minuses-to-values($offsets);
+    }
+  }
+}
+
+@mixin a11y-clickable-area-resize($offsets) {
+  &::before {
+    margin: fn-add-minuses-to-values($offsets);
+  }
+}
+
+@mixin a11y-visually-hidden {
+  position: absolute;
+
+  overflow: hidden;
+
+  clip: rect(1px, 1px, 1px, 1px);
+  clip-path: inset(50%);
+
+  width: 1px;
+  height: 1px;
+
+  margin: -1px;
+  padding: 0;
+}

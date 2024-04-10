@@ -1,0 +1,5 @@
+#{$block} {
+    &_size_m {
+        @include set-button-size($button-expanded-size-m);
+    }
+}

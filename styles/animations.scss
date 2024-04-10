@@ -1,0 +1,21 @@
+@mixin animation-pulse(
+  $animation-duration: 1000ms,
+  $animation-delay: 300ms,
+  $animation-timing-function: cubic-bezier(0.25, 0.1, 0.25, 1)
+) {
+  animation-name: animation-pulse;
+  animation-timing-function: $animation-timing-function;
+  animation-duration: $animation-duration + $animation-delay;
+  animation-iteration-count: infinite;
+
+  @keyframes animation-pulse {
+    24%,
+    100% {
+      opacity: 1;
+    }
+
+    50% {
+      opacity: 0.5;
+    }
+  }
+}

@@ -1,0 +1,102 @@
+@use '~/styles/_utils' as utils;
+
+@mixin set-button-view($theme) {
+  color: utils.get-property($theme, color, default);
+  background: utils.get-property($theme, background, default);
+
+  transition-property: color, background-color;
+  transition-timing-function: utils.get-property(
+    $theme,
+    transition,
+    timing-function
+  );
+  transition-duration: utils.get-property($theme, transition, duration);
+
+  @include with-focus-keyboard {
+    &:focus {
+      color: utils.get-property($theme, color, focus);
+      background: utils.get-property($theme, background, focus);
+    }
+  }
+
+  @include with-hover {
+    &:hover {
+      color: utils.get-property($theme, color, hover);
+      background: utils.get-property($theme, background, hover);
+    }
+  }
+
+  @include with-anything {
+    //  &:active {
+    //      color: utils.get-property($theme, color, active);
+    //      background: utils.get-property($theme, background, active);
+
+    //      transition-duration: 0ms;
+    //  }
+
+    &#{$block}_state_disabled {
+      color: utils.get-property($theme, color, disabled);
+      background: utils.get-property($theme, background, disabled);
+    }
+  }
+}
+
+@mixin set-button-view-line($theme) {
+  border: 1px solid utils.get-property($theme, background, default);
+
+  color: utils.get-property($theme, color, default);
+
+  transition-property: background-color, color, border;
+  transition-timing-function: utils.get-property(
+    $theme,
+    transition,
+    timing-function
+  );
+  transition-duration: utils.get-property($theme, transition, duration);
+
+  @include with-focus-keyboard {
+    &:focus {
+      border-color: utils.get-property($theme, background, focus);
+      background-color: utils.get-property($theme, background, focus);
+
+      color: utils.get-property($theme, color, focus);
+    }
+  }
+
+  @include with-hover {
+    &:hover {
+      border-color: utils.get-property($theme, background, hover);
+      background-color: utils.get-property($theme, background, hover);
+
+      color: utils.get-property($theme, color, hover);
+    }
+  }
+
+  @include with-anything {
+    //  &:active {
+    //      border-color: utils.get-property($theme, background, active);
+
+    //      color: utils.get-property($theme, color, active);
+
+    //      transition-duration: 0ms;
+    //  }
+
+    &#{$block}_state_disabled {
+      border-color: utils.get-property($theme, background, disabled);
+
+      color: utils.get-property($theme, color, disabled);
+    }
+  }
+}
+
+@mixin set-button-size($theme) {
+  font-size: utils.get-property($theme, font-size);
+  line-height: utils.get-property($theme, line-height);
+
+  height: utils.get-property($theme, height);
+
+  padding-top: utils.get-property($theme, padding-top);
+  padding-right: utils.get-property($theme, padding-right);
+  padding-bottom: utils.get-property($theme, padding-bottom);
+  padding-left: utils.get-property($theme, padding-left);
+}

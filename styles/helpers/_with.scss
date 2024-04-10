@@ -1,0 +1,60 @@
+/*
+ * Применяет стили к $selectors только когда фокус производится с клавиатуры.
+ * Чаще всего применяется для :focus
+ *
+ * (см. methods в ./client/modules/app/app/scripts.js)
+ */
+
+@mixin with-focus-keyboard($selectors...) {
+  @if length($selectors) == 0 {
+    $selectors: (&);
+  }
+
+  @each $selector in $selectors {
+    @at-root [data-focus='keyboard'] #{$selector} {
+      @content;
+    }
+  }
+}
+
+/*
+ * Применяет стили к $selectors в зависимости от поддержки @media (hover: hover).
+ * Чаще всего применяется для :hover
+ *
+ * (см. methods в ./client/modules/app/app/scripts.js)
+ */
+
+@mixin with-hover($selectors...) {
+  @if length($selectors) == 0 {
+    $selectors: (&);
+  }
+
+  @each $selector in $selectors {
+    @media (hover: hover) {
+      @at-root [data-hover='supported'] #{$selector} {
+        @content;
+      }
+    }
+
+    //  @at-root [data-hover=unsupported] #{$selector} {
+    //    @content;
+    //  }
+  }
+}
+
+/*
+ * Применяет стили к $selectors просто для повышения специфичности.
+ * Чаще всего используется после with-focus-keyboard и with-hover.
+ */
+
+@mixin with-anything($selectors...) {
+  @if length($selectors) == 0 {
+    $selectors: (&);
+  }
+
+  @each $selector in $selectors {
+    @at-root [data-app] #{$selector} {
+      @content;
+    }
+  }
+}

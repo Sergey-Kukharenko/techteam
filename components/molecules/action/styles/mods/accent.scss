@@ -1,0 +1,28 @@
+#{$block} {
+  &_view_accent {
+    color: $accent-color;
+  }
+
+  @include with-hover {
+    &_view_accent:hover {
+      color: $accent-color-hover;
+    }
+  }
+
+  @include with-focus-keyboard {
+    &_view_accent:focus {
+      color: $accent-color-focus;
+    }
+  }
+
+  @include with-anything {
+    &_view_accent#{$block}_checked {
+      //  &_view_accent:active {
+      color: $accent-color-active;
+    }
+
+    &_view_accent#{$block}_disabled {
+      color: $accent-color-disabled;
+    }
+  }
+}

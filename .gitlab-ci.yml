@@ -1,0 +1,52 @@
+include:
+  - project: devops/pipelines
+    ref: main
+    file: /templates_for_pipelines/includes.yaml
+
+
+variables:
+  PROJECT_NAME: landings
+  APP_NAME: "selfemployed-frontend"
+  GIT_DEPTH: 1000
+  DOCKERFILE: "./docker/frontend.docker"
+  UPSTREAM_HELM_REPO_NAME: landings
+  NEW_HELM_VALUES_FILE_NAME_FOR_BASE_CHART: ".deploy/new_values_for_base_helm_chart.yaml"
+
+
+
+build-and-push-image:
+  extends: 
+    - .build_by_docker_cache
+  tags:
+    - k8s-runner
+  rules:
+    - when: manual
+
+
+pack-and-push-helm:
+  extends: 
+    - .helm_actions
+  tags:
+    - k8s-runner
+
+
+
+deploy-test-ru:
+  extends: .deploy_from_current_pipeline
+  variables:
+    ENVIRONMENT: test_ru
+    USE_SPECIAL_TAGS_FOR_DEPLOY: "landings_test_ru,landings_selfemployed_frontend"
+  rules:
+    - when: manual
+  tags:
+    - k8s-deployer
+
+deploy-prod-ru:
+  extends: .deploy_from_current_pipeline
+  variables:
+    ENVIRONMENT: prod_ru
+    USE_SPECIAL_TAGS_FOR_DEPLOY: "landings_prod_ru,landings_selfemployed_frontend"
+  rules:
+    - when: manual
+  tags:
+    - k8s-deployer

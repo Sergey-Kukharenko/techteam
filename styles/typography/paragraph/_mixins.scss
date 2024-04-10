@@ -1,0 +1,47 @@
+@mixin paragraph-1 {
+  @include set-paragraph($typography-paragraph-1);
+}
+
+@mixin paragraph-1-expanded {
+  @include set-paragraph($typography-paragraph-1-expanded);
+}
+
+@mixin paragraph-1-medium {
+  @include set-paragraph($typography-paragraph-1-medium);
+}
+
+@mixin paragraph-1-expanded-medium {
+  @include set-paragraph($typography-paragraph-1-expanded-medium);
+}
+
+@mixin paragraph-2 {
+  @include set-paragraph($typography-paragraph-2);
+}
+
+@mixin paragraph-2-expanded {
+  @include set-paragraph($typography-paragraph-2-expanded);
+}
+
+@mixin paragraph-2-italic {
+  @include set-paragraph($typography-paragraph-2-italic);
+}
+
+@mixin paragraph-2-medium {
+  @include set-paragraph($typography-paragraph-2-medium);
+}
+
+@mixin paragraph-2-expanded-medium {
+  @include set-paragraph($typography-paragraph-2-expanded-medium);
+}
+
+@mixin paragraph-3 {
+  @include set-paragraph($typography-paragraph-3);
+}
+
+@mixin paragraph-3-medium {
+  @include set-paragraph($typography-paragraph-3-medium);
+}
+
+@mixin paragraph-info {
+  @include set-paragraph($typography-paragraph-info);
+}

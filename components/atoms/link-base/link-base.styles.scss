@@ -1,0 +1,12 @@
+@import '~/styles/helpers/_resets';
+
+
+$name: 'ga-link-base';
+$block: '.' + $name;
+
+
+#{$block} {
+  @include reset-link;
+
+  touch-action: manipulation;
+}

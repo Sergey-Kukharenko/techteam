@@ -1,0 +1,42 @@
+@use '~/styles/_utils' as utils;
+
+@mixin set-button-link-view($theme) {
+  color: utils.get-property($theme, color, default);
+
+  transition-property: color;
+  transition-timing-function: utils.get-property(
+    $theme,
+    transition,
+    timing-function
+  );
+  transition-duration: utils.get-property($theme, transition, duration);
+
+  @include with-focus-keyboard {
+    &:focus {
+      color: utils.get-property($theme, color, focus);
+    }
+  }
+
+  @include with-hover {
+    &:hover {
+      color: utils.get-property($theme, color, hover);
+    }
+  }
+
+  @include with-anything {
+    //  &:active {
+    //      color: utils.get-property($theme, color, active);
+
+    //      transition-duration: 0ms;
+    //  }
+
+    &#{$block}_state_disabled {
+      color: utils.get-property($theme, color, disabled);
+    }
+  }
+}
+
+@mixin set-button-link-size($theme) {
+  font-size: utils.get-property($theme, font-size);
+  line-height: utils.get-property($theme, line-height);
+}

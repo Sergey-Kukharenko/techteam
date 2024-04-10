@@ -1,0 +1,19 @@
+$name: 'ga-icon';
+$block: '.' + $name;
+
+
+#{$block} {
+  vertical-align: top;
+
+  display: inline-block;
+
+  fill: currentcolor;
+  stroke: currentcolor;
+
+  & > * {
+    display: block;
+
+    width: 100%;
+    height: 100%;
+  }
+}

@@ -1,0 +1,31 @@
+#{$block} {
+  &_size_s {
+    @include set-button-size($button-with-icon-size-s);
+  }
+
+  &_size_m {
+    @include set-button-size($button-with-icon-size-m);
+  }
+
+  &_size_s &__icon {
+    width: $icon-size-s;
+    height: $icon-size-s;
+
+    margin-left: $icon-gap-s;
+  }
+
+  &_size_s#{$block}_reverse &__icon {
+    margin-right: $icon-gap-s;
+  }
+
+  &_size_m &__icon {
+    width: $icon-size-m;
+    height: $icon-size-m;
+
+    margin-left: $icon-gap-m;
+  }
+
+  &_size_m#{$block}_reverse &__icon {
+    margin-right: $icon-gap-m;
+  }
+}

@@ -1,0 +1,47 @@
+@import './styles/_name';
+@import './styles/_vars';
+
+@import './styles/mixins';
+@import './styles/themes';
+
+@import './styles/mods';
+
+#{$block} {
+  @include a11y-clickable-area-set(relative, 10px);
+
+  font-weight: 500;
+
+  text-transform: uppercase;
+
+  letter-spacing: $letter-spacing;
+
+  display: inline-block;
+
+  max-width: 100%;
+
+  box-sizing: border-box;
+
+  &__content {
+    position: relative;
+
+    display: flex;
+
+    align-items: center;
+    justify-content: flex-start;
+  }
+
+  &_reverse &__content {
+    flex-direction: row-reverse;
+  }
+
+  &__text {
+    @include ellipsis;
+  }
+
+  &__icon {
+    flex-shrink: 0;
+
+    width: $icon-size;
+    height: $icon-size;
+  }
+}

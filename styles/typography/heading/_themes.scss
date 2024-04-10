@@ -1,0 +1,88 @@
+@use 'sass:map';
+
+$typography-heading-base: (
+  font-size: null,
+  font-weight: null,
+  line-height: null,
+  letter-spacing: null,
+) !default;
+
+$typography-heading-1: map.deep-merge(
+  $typography-heading-base,
+  (
+    font-size: 60px,
+    font-weight: 500,
+    line-height: 1,
+    letter-spacing: -0.2px,
+  )
+) !default;
+
+$typography-heading-2: map.deep-merge(
+  $typography-heading-base,
+  (
+    font-size: 50px,
+    font-weight: 500,
+    line-height: 1.1,
+    letter-spacing: -0.2px,
+  )
+) !default;
+
+$typography-heading-3: map.deep-merge(
+  $typography-heading-base,
+  (
+    font-size: 45px,
+    font-weight: 500,
+    line-height: 1.1,
+    letter-spacing: -0.2px,
+  )
+) !default;
+
+$typography-heading-4: map.deep-merge(
+  $typography-heading-base,
+  (
+    font-size: 40px,
+    font-weight: 500,
+    line-height: 1.1,
+    letter-spacing: -0.2px,
+  )
+) !default;
+
+$typography-heading-5: map.deep-merge(
+  $typography-heading-base,
+  (
+    font-size: 35px,
+    font-weight: 500,
+    line-height: 1.1,
+    letter-spacing: -0.4px,
+  )
+) !default;
+
+$typography-heading-6: map.deep-merge(
+  $typography-heading-base,
+  (
+    font-size: 30px,
+    font-weight: 500,
+    line-height: 1.1,
+    letter-spacing: -0.4px,
+  )
+) !default;
+
+$typography-heading-7: map.deep-merge(
+  $typography-heading-base,
+  (
+    font-size: 25px,
+    font-weight: 500,
+    line-height: 1.1,
+    letter-spacing: normal,
+  )
+) !default;
+
+$typography-heading-8: map.deep-merge(
+  $typography-heading-base,
+  (
+    font-size: 20px,
+    font-weight: 500,
+    line-height: 1.1,
+    letter-spacing: normal,
+  )
+) !default;

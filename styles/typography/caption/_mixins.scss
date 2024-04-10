@@ -1,0 +1,296 @@
+@mixin subheading-1 {
+  font-size: 11px;
+  font-style: normal;
+  font-weight: 500;
+  line-height: 1.5;
+
+  text-transform: uppercase;
+
+  letter-spacing: 1.4px;
+}
+
+@mixin subheading-2 {
+  font-size: 9px;
+  font-style: normal;
+  font-weight: 500;
+  line-height: 1.5;
+
+  text-transform: uppercase;
+
+  letter-spacing: 1.4px;
+}
+
+@mixin caption-8-medium {
+  font-size: 8px;
+  font-style: normal;
+  font-weight: 500;
+  line-height: 1.4;
+
+  text-transform: uppercase;
+
+  letter-spacing: 0.5px;
+}
+
+@mixin caption-9-medium {
+  font-size: 9px;
+  font-style: normal;
+  font-weight: 500;
+  line-height: 1.4;
+
+  text-transform: uppercase;
+
+  letter-spacing: 0.5px;
+}
+
+@mixin caption-10-medium {
+  font-size: 10px;
+  font-style: normal;
+  font-weight: 500;
+  line-height: 1.2;
+
+  text-transform: none;
+
+  letter-spacing: normal;
+}
+
+@mixin caption-11-medium {
+  font-size: 11px;
+  font-style: normal;
+  font-weight: 500;
+  line-height: 1.2;
+
+  text-transform: none;
+
+  letter-spacing: normal;
+}
+
+@mixin caption-11-expanded-medium {
+  font-size: 11px;
+  font-style: normal;
+  font-weight: 500;
+  line-height: 1.4;
+
+  text-transform: uppercase;
+
+  letter-spacing: 0.5px;
+}
+
+@mixin caption-12 {
+  font-size: 12px;
+  font-style: normal;
+  font-weight: 400;
+  line-height: 1;
+
+  text-transform: none;
+
+  letter-spacing: normal;
+}
+
+@mixin caption-12-medium {
+  font-size: 12px;
+  font-style: normal;
+  font-weight: 500;
+  line-height: 1;
+
+  text-transform: none;
+
+  letter-spacing: normal;
+}
+
+@mixin caption-13-default-medium {
+  font-size: 13px;
+  font-style: normal;
+  font-weight: 500;
+  line-height: 1.1;
+
+  text-transform: none;
+
+  letter-spacing: normal;
+}
+
+@mixin caption-13-medium {
+  font-size: 13px;
+  font-style: normal;
+  font-weight: 500;
+  line-height: 1.2;
+
+  text-transform: none;
+
+  letter-spacing: normal;
+}
+
+@mixin caption-13-expanded {
+  font-size: 13px;
+  font-style: normal;
+  font-weight: 400;
+  line-height: 1.4;
+
+  text-transform: none;
+
+  letter-spacing: normal;
+}
+
+@mixin caption-13-expanded-medium {
+  font-size: 13px;
+  font-style: normal;
+  font-weight: 500;
+  line-height: 1.4;
+
+  text-transform: none;
+
+  letter-spacing: normal;
+}
+
+@mixin caption-14-expanded {
+  font-size: 14px;
+  font-style: normal;
+  font-weight: 400;
+  line-height: 22px;
+
+  text-transform: none;
+
+  letter-spacing: 1.2px;
+}
+
+@mixin caption-15-default-medium {
+  font-size: 15px;
+  font-style: normal;
+  font-weight: 500;
+  line-height: 1.1;
+
+  text-transform: none;
+
+  letter-spacing: normal;
+}
+
+@mixin caption-15 {
+  font-size: 15px;
+  font-style: normal;
+  font-weight: 400;
+  line-height: 1.4;
+
+  text-transform: none;
+
+  letter-spacing: normal;
+}
+
+@mixin caption-16-medium {
+  font-size: 16px;
+  font-style: normal;
+  font-weight: 500;
+  line-height: 1.1;
+
+  text-transform: uppercase;
+
+  letter-spacing: -0.4px;
+}
+
+@mixin caption-16-italic {
+  font-size: 16px;
+  font-style: italic;
+  font-weight: 400;
+  line-height: 1.4;
+
+  text-transform: none;
+
+  letter-spacing: normal;
+}
+
+@mixin caption-16-expanded {
+  font-size: 16px;
+  font-style: normal;
+  font-weight: 400;
+  line-height: 26px;
+
+  text-transform: none;
+
+  letter-spacing: 1.2px;
+}
+
+@mixin caption-17 {
+  font-size: 17px;
+  font-style: normal;
+  font-weight: 400;
+  line-height: 1.1;
+
+  text-transform: none;
+
+  letter-spacing: normal;
+}
+
+@mixin caption-18-default-medium {
+  font-size: 18px;
+  font-style: normal;
+  font-weight: 500;
+  line-height: 1.1;
+
+  text-transform: none;
+
+  letter-spacing: normal;
+}
+
+@mixin caption-18-medium {
+  font-size: 18px;
+  font-style: normal;
+  font-weight: 500;
+  line-height: 1.4;
+
+  text-transform: none;
+
+  letter-spacing: normal;
+}
+
+@mixin caption-18-expanded-medium {
+  font-size: 18px;
+  font-style: normal;
+  font-weight: 500;
+  line-height: 1.6;
+
+  text-transform: none;
+
+  letter-spacing: normal;
+}
+
+@mixin caption-18-expanded {
+  font-size: 18px;
+  font-style: normal;
+  font-weight: 400;
+  line-height: 1.6;
+
+  text-transform: none;
+
+  letter-spacing: 1.2px;
+}
+
+@mixin caption-20-medium-italic {
+  font-size: 20px;
+  font-style: italic;
+  font-weight: 500;
+  line-height: 1.1;
+
+  text-transform: none;
+
+  letter-spacing: 0.4px;
+}
+
+@mixin caption-20-expanded-medium {
+  font-size: 20px;
+  font-style: normal;
+  font-weight: 500;
+  line-height: 1.4;
+
+  text-transform: none;
+
+  letter-spacing: normal;
+}
+
+@mixin caption-22-medium {
+  font-size: 22px;
+  font-style: normal;
+  font-weight: 500;
+  line-height: 1.1;
+
+  text-transform: none;
+
+  letter-spacing: normal;
+}

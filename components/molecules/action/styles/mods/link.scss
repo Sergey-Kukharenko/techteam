@@ -1,0 +1,25 @@
+#{$block} {
+  &_view_link {
+    font-family: inherit;
+    font-size: inherit;
+    font-style: inherit;
+    font-weight: inherit;
+    font-variant: inherit;
+
+    display: inline;
+
+    color: $link-color;
+  }
+
+  @include with-hover {
+    &_view_link:hover {
+      text-decoration: underline;
+    }
+  }
+
+  @include with-focus-keyboard {
+    &_view_link:focus {
+      text-decoration: underline;
+    }
+  }
+}

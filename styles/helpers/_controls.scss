@@ -1,0 +1,25 @@
+/* stylelint-disable property-no-vendor-prefix */
+@mixin control-hiding {
+  -webkit-appearance: none;
+  -moz-appearance: none;
+  appearance: none;
+
+  position: absolute;
+
+  z-index: -9999;
+
+  border: 0;
+
+  outline: none;
+
+  color: transparent;
+  caret-color: transparent;
+  background: none;
+
+  pointer-events: none;
+
+  &::selection {
+    color: transparent !important;
+    background: transparent !important;
+  }
+}

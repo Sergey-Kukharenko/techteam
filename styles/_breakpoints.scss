@@ -1,0 +1,126 @@
+@use 'sass:map';
+
+// prettier-ignore
+$list-bp-values: 0,        // mobile-small      (bp-0)
+  375px,    // mobile            (bp-375)
+  540px,    // mobile-large      (bp-540)
+  600px,    // tablet-small      (bp-600)
+  768px,    // tablet            (bp-768)
+  850px,    // tablet-landscape  (bp-850)
+  1024px,   // tablet-large      (bp-1024)
+  1120px,   // desktop-small     (bp-1120)
+  1200px,   // desktop-tilda     (bp-1200)
+  1280px,   // desktop           (bp-1280)
+  1360px,   // desktop-large     (bp-1360)
+  1440px,   // widescreen-small  (bp-1440)
+  1530px,   // widescreen        (bp-1530)
+  1680px,   // widescreen-large  (bp-1680)
+  1920px,   // fullhd            (bp-1920)
+;
+
+// prettier-ignore
+$list-bp-names: 'mobile-small',
+  'mobile',
+  'mobile-large',
+  'tablet-small',
+  'tablet',
+  'tablet-landscape',
+  'tablet-large',
+  'desktop-small',
+  'desktop-tilda ',
+  'desktop',
+  'desktop-large',
+  'widescreen-small',
+  'widescreen',
+  'widescreen-large',
+  'fullhd'
+;
+
+// prettier-ignore
+$list-bp-symbols: 'bp-0',
+  'bp-375',
+  'bp-540',
+  'bp-600',
+  'bp-768',
+  'bp-850',
+  'bp-1024',
+  'bp-1120',
+  'bp-1200',
+  'bp-1280',
+  'bp-1360',
+  'bp-1440',
+  'bp-1530',
+  'bp-1680',
+  'bp-1920'
+;
+
+@function build-map-from-lists($list1, $list2) {
+  $zipped: zip($list1, $list2);
+  $map: ();
+
+  @each $key, $value in $zipped {
+    $map: map.set($map, $key, $value);
+  }
+
+  @return $map;
+}
+
+$map-breakpoints: build-map-from-lists($list-bp-symbols, $list-bp-values);
+
+@function get-bp($type) {
+  @if not map-has-key($map-breakpoints, $type) {
+    @error 'Undefined breakpoint #{$type}';
+  }
+
+  @return map-get($map-breakpoints, $type);
+}
+
+@mixin bp-all {
+  @media screen {
+    @content;
+  }
+}
+
+@mixin bp-from($type) {
+  @media screen and (min-width: $type) {
+    @content;
+  }
+}
+
+@mixin bp-till($type) {
+  @media screen and (max-width: $type - 1) {
+    @content;
+  }
+}
+
+@mixin bp-between($type-from, $type-to) {
+  @media screen and (min-width: $type-from) and (max-width: $type-to - 1) {
+    @content;
+  }
+}
+
+$map-breakpoints-with-names: build-map-from-lists(
+  $list-bp-names,
+  $list-bp-values
+);
+
+$bp-mobile: get-bp(bp-375);
+$bp-mobile-large: get-bp(bp-540);
+$bp-tablet-small: get-bp(bp-600);
+$bp-tablet: get-bp(bp-768);
+$bp-tablet-landscape: get-bp(bp-850);
+$bp-tablet-large: get-bp(bp-1024);
+$bp-desktop-small: get-bp(bp-1120);
+$bp-desktop-tilda: get-bp(bp-1200);
+$bp-desktop: get-bp(bp-1280);
+$bp-desktop-large: get-bp(bp-1360);
+$bp-widescreen-small: get-bp(bp-1440);
+$bp-widescreen: get-bp(bp-1530);
+$bp-widescreen-large: get-bp(bp-1680);
+$bp-fullhd: get-bp(bp-1920);
+
+:export {
+  @each $key, $value in $map-breakpoints-with-names {
+    #{unquote($key)}: $value;
+  }
+}

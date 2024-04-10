@@ -1,0 +1,24 @@
+#{$block} {
+  @include with-hover {
+    &_view_regular:hover {
+      color: $regular-color-hover;
+    }
+  }
+
+  @include with-focus-keyboard {
+    &_view_regular:focus {
+      color: $regular-color-focus;
+    }
+  }
+
+  @include with-anything {
+    &_view_regular#{$block}_checked {
+      //  &_view_regular:active {
+      color: $regular-color-active;
+    }
+
+    &_view_regular#{$block}_disabled {
+      color: $regular-color-disabled;
+    }
+  }
+}

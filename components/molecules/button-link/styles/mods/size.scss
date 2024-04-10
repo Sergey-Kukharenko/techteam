@@ -1,0 +1,9 @@
+#{$block} {
+  &_size_s {
+    @include set-button-link-size($button-link-size-s);
+  }
+
+  &_size_m {
+    @include set-button-link-size($button-link-size-m);
+  }
+}

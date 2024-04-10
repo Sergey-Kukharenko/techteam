@@ -1,0 +1,31 @@
+@mixin heading-1 {
+  @include set-heading($typography-heading-1);
+}
+
+@mixin heading-2 {
+  @include set-heading($typography-heading-2);
+}
+
+@mixin heading-3 {
+  @include set-heading($typography-heading-3);
+}
+
+@mixin heading-4 {
+  @include set-heading($typography-heading-4);
+}
+
+@mixin heading-5 {
+  @include set-heading($typography-heading-5);
+}
+
+@mixin heading-6 {
+  @include set-heading($typography-heading-6);
+}
+
+@mixin heading-7 {
+  @include set-heading($typography-heading-7);
+}
+
+@mixin heading-8 {
+  @include set-heading($typography-heading-8);
+}

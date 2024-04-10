@@ -1,0 +1,17 @@
+$font-family-primary: 'GraphikLCG', 'Helvetica', 'Arial', sans-serif;
+
+$line-height-primary: 1.5;
+
+$font-family: $font-family-primary;
+$line-height: $line-height-primary;
+$min-content-width: 320px;
+
+$selection-color: color('surface', 'inverse');
+$selection-background: color('surface', 'accent');
+
+$map-z-index: (
+  header: 999,
+  modal: 9999,
+  notification: 99999,
+  debug: 999999,
+);

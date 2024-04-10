@@ -1,0 +1,15 @@
+@use '~/components/molecules/button/styles/mixins/button-theme' as *;
+
+#{$block} {
+    &_view_main {
+        @include set-button-view($button-expanded-view-main);
+    }
+
+    &_view_invert {
+        @include set-button-view($button-expanded-view-invert);
+    }
+
+    &_view_line {
+        @include set-button-view-line($button-expanded-view-line);
+    }
+}

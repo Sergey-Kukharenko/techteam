@@ -1,0 +1,5 @@
+#{$block} {
+  &_state_loading {
+    @include animation-pulse;
+  }
+}

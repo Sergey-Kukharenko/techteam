@@ -1,0 +1,127 @@
+@import '~/styles/colors';
+@import '~/styles/_breakpoints';
+@import '~/styles/helpers/_layout';
+@import '~/styles/helpers/_typography';
+
+
+$name: 'ga-facts';
+$block: '.' + $name;
+
+
+$content-max-with-tablet: 768px;
+$content-max-with-desktop: 1360px;
+
+$content-padding-mobile: 39px 21px 33px;
+$content-padding-tablet: 48px 50px 44px;
+$content-padding-desktop: 60px 100px 48px;
+
+
+$item-offset-mobile: 75px;
+
+
+$item-title-font-size-mobile: 50px;
+$item-title-font-size-tablet: 50px;
+$item-title-font-size-desktop: 80px;
+
+
+$item-text-font-size-mobile: 10px;
+$item-text-font-size-tablet: 10px;
+$item-text-font-size-desktop: 20px;
+
+
+$item-text-offset-mobile: 10px;
+$item-text-offset-tablet: 10px;
+$item-text-offset-desktop: 20px;
+
+
+
+#{$block} {
+  @include bp-all {
+    & {
+      background-color: color('surface', 'base-5');
+    }
+
+    &__content {
+      display: flex;
+      justify-content: space-between;
+      box-sizing: border-box;
+      margin: 0 auto;
+    }
+
+
+    &__item {
+      display: flex;
+      align-items: center;
+    }
+
+    &__item-title {
+      font-family: $font-family-accent;
+      font-weight: 500;
+      line-height: 90%;
+      letter-spacing: 3px;
+      text-transform: uppercase;
+    }
+
+    &__item-text {
+      font-style: normal;
+      font-weight: 500;
+      line-height: 120%;
+      white-space: pre;
+    }
+  }
+
+  @include bp-till($bp-tablet) {
+    &__content {
+      padding: $content-padding-mobile;
+
+      @include layout-hide-scrollbar;
+
+      overflow-y: scroll;
+    }
+
+    &__item + &__item {
+      margin: 0 0 0 $item-offset-mobile;
+    }
+
+    &__item-title {
+      font-size: $item-title-font-size-mobile;
+    }
+
+    &__item-text {
+      font-size: $item-text-font-size-mobile;
+      margin: 0 0 0 $item-text-offset-mobile;
+    }
+  }
+
+  @include bp-between($bp-tablet, $bp-desktop-large) {
+    &__content {
+      padding: $content-padding-tablet;
+      max-width: $content-max-with-tablet;
+    }
+
+    &__item-title {
+      font-size: $item-title-font-size-tablet;
+    }
+
+    &__item-text {
+      font-size: $item-text-font-size-tablet;
+      margin: 0 0 0 $item-text-offset-tablet;
+    }
+  }
+
+  @include bp-from($bp-desktop-large) {
+    &__content {
+      padding: $content-padding-desktop;
+      max-width: $content-max-with-desktop;
+    }
+
+    &__item-title {
+      font-size: $item-title-font-size-desktop;
+    }
+
+    &__item-text {
+      font-size: $item-text-font-size-desktop;
+      margin: 0 0 0 $item-text-offset-desktop;
+    }
+  }
+}

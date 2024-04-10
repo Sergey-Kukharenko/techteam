@@ -1,0 +1,83 @@
+@use 'sass:map';
+
+@import '../../../button/styles/themes/view';
+
+$button-with-icon-view-main: map.deep-merge(
+  $button-base-view,
+  (
+    color: (
+      default: $color-main-default,
+      hover: $color-main-hover,
+      focus: $color-main-focus,
+      active: $color-main-active,
+      disabled: $color-main-disabled,
+    ),
+    background: (
+      default: $background-main-default,
+      hover: $background-main-hover,
+      focus: $background-main-focus,
+      active: $background-main-active,
+      disabled: $background-main-disabled,
+    ),
+  )
+) !default;
+
+$button-with-icon-view-invert: map.deep-merge(
+  $button-base-view,
+  (
+    color: (
+      default: $color-invert-default,
+      hover: $color-invert-hover,
+      focus: $color-invert-focus,
+      active: $color-invert-active,
+      disabled: $color-invert-disabled,
+    ),
+    background: (
+      default: $background-invert-default,
+      hover: $background-invert-hover,
+      focus: $background-invert-focus,
+      active: $background-invert-active,
+      disabled: $background-invert-disabled,
+    ),
+  )
+) !default;
+
+$button-with-icon-view-secondary: map.deep-merge(
+  $button-base-view,
+  (
+    color: (
+      default: $color-secondary-default,
+      hover: $color-secondary-hover,
+      focus: $color-secondary-focus,
+      active: $color-secondary-active,
+      disabled: $color-secondary-disabled,
+    ),
+    background: (
+      default: $background-secondary-default,
+      hover: $background-secondary-hover,
+      focus: $background-secondary-focus,
+      active: $background-secondary-active,
+      disabled: $background-secondary-disabled,
+    ),
+  )
+) !default;
+
+$button-with-icon-view-line: map.deep-merge(
+  $button-base-view,
+  (
+    color: (
+      default: $color-line-default,
+      hover: $color-line-hover,
+      focus: $color-line-focus,
+      active: $color-line-active,
+      disabled: $color-line-disabled,
+    ),
+    background: (
+      default: $background-line-default,
+      hover: $background-line-hover,
+      focus: $background-line-focus,
+      active: $background-line-active,
+      disabled: $background-line-disabled,
+    ),
+  )
+) !default;

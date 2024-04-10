@@ -1,0 +1,11 @@
+@mixin rtl($selectors...) {
+  @if length($selectors) == 0 {
+    $selectors: (&);
+  }
+
+  @each $selector in $selectors {
+    @at-root [dir='rtl'] #{$selector} {
+      @content;
+    }
+  }
+}

@@ -1,0 +1,11 @@
+{
+  "name": "@ga/shared-browser",
+  "license": "ISC",
+  "main": "src/index.js",
+  "directories": {
+    "src": "src"
+  },
+  "files": [
+    "src"
+  ]
+}

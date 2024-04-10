@@ -1,0 +1,81 @@
+$color-inverse: #fff !default;
+
+$color-base: #000 !default;
+$color-base-3: #f9f9f9 !default;
+$color-base-4: #f5f5f5 !default;
+$color-base-5: #f2f2f2 !default;
+$color-base-7: #ededed !default;
+$color-base-10: #e6e6e6 !default;
+$color-base-15: #d9d9d9 !default;
+$color-base-20: #ccc !default;
+$color-base-30: #b3b3b3 !default;
+$color-base-50: #7f7f7f !default;
+$color-base-70: #4d4d4d !default;
+
+$color-accent: #c6b09f !default;
+$color-accent-dark: #ac8c75 !default;
+
+$color-error: #ff0042 !default;
+$color-error-3: #fffbfb !default;
+$color-success: #1cd344 !default;
+
+$color-brand: #dcff00;
+$color-brand-dark: #a8cb01;
+
+$colors-surface: (
+  'inverse': $color-inverse,
+  'base': $color-base,
+  'base-3': $color-base-3,
+  'base-4': $color-base-4,
+  'base-5': $color-base-5,
+  'base-7': $color-base-7,
+  'base-10': $color-base-10,
+  'base-15': $color-base-15,
+  'base-20': $color-base-20,
+  'base-30': $color-base-30,
+  'base-50': $color-base-50,
+  'base-70': $color-base-70,
+  'accent': $color-brand,
+  'accent-dark': $color-brand-dark,
+  'error': $color-error,
+  'error-3': $color-error-3,
+  'success': $color-success,
+  'brand': $color-brand,
+) !default;
+
+$colors-typography: (
+  'inverse': $color-inverse,
+  'base': $color-base,
+  'base-10': $color-base-10,
+  'base-20': $color-base-20,
+  'base-30': $color-base-30,
+  'base-50': $color-base-50,
+  'base-70': $color-base-70,
+  'accent': $color-brand,
+  'accent-dark': $color-brand-dark,
+  'error': $color-error,
+) !default;
+
+$colors-icon: (
+  'inverse': $color-inverse,
+  'base': $color-base,
+  'base-15': $color-base-15,
+  'base-30': $color-base-30,
+) !default;
+
+$colors-feature: () !default;
+
+$colors: (
+  'surface': $colors-surface,
+  'typography': $colors-typography,
+  'icon': $colors-icon,
+  'feature': $colors-feature,
+) !default;
+
+@function color($color-name, $color-variant: null) {
+  @if $color-variant {
+    @return map-get(map-get($colors, $color-name), $color-variant);
+  }
+
+  @return map-get($colors, $color-name);
+}

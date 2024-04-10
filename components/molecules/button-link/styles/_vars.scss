@@ -1,0 +1,28 @@
+@import '~/styles/colors';
+@import '~/styles/animations';
+@import '~/styles/helpers/_a11y';
+@import '~/styles/helpers/_ellipsis';
+@import '~/styles/helpers/_with';
+@import '~/styles/helpers/_typography';
+
+$letter-spacing: $letter-spacing-expanded;
+
+$icon-size: 15px;
+
+$color-main-default: color('typography', 'base');
+$color-main-hover: color('typography', 'accent');
+$color-main-focus: color('typography', 'accent');
+$color-main-active: color('typography', 'accent-dark');
+$color-main-disabled: color('typography', 'base-50');
+
+$color-invert-default: color('typography', 'inverse');
+$color-invert-hover: color('typography', 'accent');
+$color-invert-focus: color('typography', 'accent');
+$color-invert-active: color('typography', 'accent-dark');
+$color-invert-disabled: color('typography', 'base-50');
+
+$color-secondary-default: color('typography', 'base-70');
+$color-secondary-hover: color('typography', 'accent');
+$color-secondary-focus: color('typography', 'accent');
+$color-secondary-active: color('typography', 'accent-dark');
+$color-secondary-disabled: color('typography', 'base-50');

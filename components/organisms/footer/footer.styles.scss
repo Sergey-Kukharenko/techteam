@@ -1,0 +1,218 @@
+@import '~/styles/colors';
+@import '~/styles/_breakpoints';
+@import '~/styles/helpers/_layout';
+@import '~/styles/helpers/_typography';
+
+
+$name: 'ga-footer';
+$block: '.' + $name;
+
+
+$content-padding-mobile: 80px 20px 80px;
+$content-padding-tablet: 99px 50px 100px 0;
+$content-padding-desktop: 120px 100px 120px 0;
+
+
+$image-width-tablet: 310px;
+$image-width-desktop: 362px;
+
+$image-offset-tablet: -340px;
+$image-offset-desktop: -523px;
+
+$image-transform-tablet: translateY(-10px);
+$image-transform-desktop: translateY(-13px);
+
+
+$title-font-size-mobile: 60px;
+$title-font-size-tablet: 70px;
+$title-font-size-desktop: 80px;
+
+$title-line-height-mobile: 0.9;
+$title-line-height-tablet: 0.9;
+$title-line-height-desktop: 0.9;
+
+
+$subtitle-max-width: 500px;
+
+$subtitle-font-size-mobile: 16px;
+$subtitle-font-size-tablet: 18px;
+$subtitle-font-size-desktop: 18px;
+
+$subtitle-line-height-mobile: 1.6;
+$subtitle-line-height-tablet: 1.6;
+$subtitle-line-height-desktop: 1.6;
+
+$subtitle-offset-mobile: 22px;
+$subtitle-offset-tablet: 20px;
+$subtitle-offset-desktop: 19px;
+
+
+$markets-offset-mobile: 30px;
+$markets-offset-tablet: 50px;
+$markets-offset-desktop: 55px;
+
+
+$market-offset-mobile: 18px;
+$market-offset-tablet: 14px;
+$market-offset-desktop: 34px;
+
+
+$market-icon-height-mobile: 18px;
+$market-icon-height-tablet: 18px;
+$market-icon-height-desktop: 30px;
+
+
+#{$block} {
+  @include bp-all {
+    & {
+      background: linear-gradient(to bottom, color('surface', 'base'), #282828);
+      color: color('surface', 'inverse');
+      overflow: hidden;
+    }
+
+    &__content {
+      position: relative;
+    }
+
+    &__image {
+      position: absolute;
+      user-select: none;
+    }
+
+    &__title {
+      color: color('surface', 'brand');
+      font-family: $font-family-accent;
+
+      font-weight: 500;
+    }
+
+    &__title {
+      margin: 0;
+    }
+
+    &__subtitle {
+      max-width: $subtitle-max-width;
+    }
+  }
+
+  @include bp-till($bp-tablet) {
+    &__content {
+      padding: $content-padding-mobile;
+    }
+
+    &__image {
+      display: none;
+    }
+
+    &__title {
+      font-size: $title-font-size-mobile;
+      line-height: $title-line-height-mobile;
+    }
+
+    &__subtitle {
+      font-size: $subtitle-font-size-mobile;
+      line-height: $subtitle-line-height-mobile;
+      margin: $subtitle-offset-mobile 0 0;
+    }
+
+    &__subtitle_type_desktop {
+      display: none;
+    }
+
+    &__markets {
+      display: flex;
+    }
+
+    &__markets {
+      margin: $markets-offset-mobile 0 0;
+    }
+
+    &__market + &__market {
+      margin: 0 0 0 $market-offset-mobile;
+    }
+
+    &__market-icon {
+      height: $market-icon-height-mobile;
+    }
+  }
+
+  @include bp-between($bp-tablet, $bp-desktop-large) {
+    &__content {
+      padding: $content-padding-tablet;
+      margin: 0 0 0 50%;
+    }
+
+    &__image {
+      width: $image-width-tablet;
+      left: $image-offset-tablet;
+      transform: $image-transform-tablet;
+    }
+
+    &__title {
+      font-size: $title-font-size-tablet;
+      line-height: $title-line-height-tablet;
+    }
+
+    &__subtitle {
+      font-size: $subtitle-font-size-tablet;
+      line-height: $subtitle-line-height-tablet;
+      margin: $subtitle-offset-tablet 0 0;
+    }
+
+    &__subtitle_type_mobile {
+      display: none;
+    }
+
+    &__markets {
+      margin: $markets-offset-tablet 0 0;
+    }
+
+    &__market + &__market {
+      margin: 0 0 0 $market-offset-tablet;
+    }
+
+    &__market-icon {
+      height: $market-icon-height-tablet;
+    }
+  }
+
+  @include bp-from($bp-desktop-large) {
+    &__content {
+      padding: $content-padding-desktop;
+      margin: 0 0 0 50%;
+    }
+
+    &__image {
+      width: $image-width-desktop;
+      left: $image-offset-desktop;
+      transform: $image-transform-desktop;
+    }
+
+    &__title {
+      font-size: $title-font-size-desktop;
+      line-height: $title-line-height-desktop;
+    }
+
+    &__subtitle {
+      font-size: $subtitle-font-size-desktop;
+      line-height: $subtitle-line-height-desktop;
+      margin: $subtitle-offset-desktop 0 0;
+    }
+
+    &__subtitle_type_mobile {
+      display: none;
+    }
+
+    &__markets {
+      margin: $markets-offset-desktop 0 0;
+    }
+
+    &__market + &__market {
+      margin: 0 0 0 $market-offset-desktop;
+    }
+
+    &__market-icon {
+      height: $market-icon-height-desktop;
+    }
+  }
+}

@@ -1,0 +1,8 @@
+export { default as GaIconPrimaryArrowLong } from './primary/arrow-long.vue'
+export { default as GaIconPrimaryArrow } from './primary/arrow.vue'
+export { default as GaIconPrimaryLogo } from './primary/logo.vue'
+export { default as GaIconPrimaryMarketAppGallery } from './primary/market-app-gallery.vue'
+export { default as GaIconPrimaryMarketAppStore } from './primary/market-app-store.vue'
+export { default as GaIconPrimaryMarketGooglePlay } from './primary/market-google-play.vue'
+export { default as GaIconPrimaryMarketRuStore } from './primary/market-ru-store.vue'
+export { default as GaIconPrimaryStar } from './primary/star.vue'

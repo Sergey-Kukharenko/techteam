@@ -1,0 +1,35 @@
+@font-face {
+  font-family: GraphikLCG;
+  font-style: normal;
+  font-weight: normal;
+
+  src: local('GraphikLCG-Regular'), local('Graphik LCG Regular'),
+    local('Graphik-LCG-Regular'),
+    url('~/assets/fonts/GraphikLCG-Regular.woff2') format('woff2'),
+    url('~/assets/fonts/GraphikLCG-Regular.woff') format('woff');
+  font-display: swap;
+}
+
+@font-face {
+  font-family: GraphikLCG;
+  font-style: normal;
+  font-weight: 500;
+
+  src: local('GraphikLCG-Medium'), local('Graphik LCG Medium'),
+    local('Graphik-LCG-Medium'),
+    url('~/assets/fonts/GraphikLCG-Medium.woff2') format('woff2'),
+    url('~/assets/fonts/GraphikLCG-Medium.woff') format('woff');
+  font-display: swap;
+}
+
+
+@font-face {
+  font-family: 'Druk Cy';
+  font-style: normal;
+  font-weight: 500;
+  font-display: block;
+
+  src: local('Druk Cy Medium'), local('Druk-Cy-Medium'),
+  url('~/assets/fonts/DrukCy-Medium.woff2') format('woff2'),
+  url('~/assets/fonts/DrukCy-Medium.woff') format('woff');
+}

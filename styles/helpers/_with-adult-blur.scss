@@ -1,0 +1,11 @@
+@mixin with-adult-blur($selectors...) {
+  @if length($selectors) == 0 {
+    $selectors: (&);
+  }
+
+  @each $selector in $selectors {
+    @at-root [data-adult-blur='true'] #{$selector} {
+      @content;
+    }
+  }
+}

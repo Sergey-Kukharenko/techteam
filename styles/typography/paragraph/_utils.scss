@@ -1,0 +1,8 @@
+@use '../../utils' as utils;
+
+@mixin set-paragraph($theme) {
+  font-size: utils.get-property($theme, font-size);
+  font-style: utils.get-property($theme, font-style);
+  font-weight: utils.get-property($theme, font-weight);
+  line-height: utils.get-property($theme, line-height);
+}

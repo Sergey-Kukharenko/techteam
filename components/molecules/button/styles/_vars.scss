@@ -1,0 +1,53 @@
+@import '~/styles/helpers/_ellipsis';
+@import '~/styles/helpers/_with';
+@import '~/styles/helpers/_typography';
+
+$letter-spacing: $letter-spacing-expanded;
+
+$color-main-default: color('typography', 'inverse');
+$color-main-hover: color('typography', 'inverse');
+$color-main-focus: color('typography', 'inverse');
+$color-main-active: color('typography', 'inverse');
+$color-main-disabled: color('typography', 'inverse');
+
+$background-main-default: color('surface', 'base');
+$background-main-hover: color('surface', 'accent');
+$background-main-focus: color('surface', 'accent');
+$background-main-active: color('surface', 'accent-dark');
+$background-main-disabled: color('surface', 'base-30');
+
+$color-invert-default: color('typography', 'base');
+$color-invert-hover: color('typography', 'accent');
+$color-invert-focus: color('typography', 'accent');
+$color-invert-active: color('typography', 'accent-dark');
+$color-invert-disabled: color('typography', 'base-50');
+
+$background-invert-default: transparent;
+$background-invert-hover: transparent;
+$background-invert-focus: transparent;
+$background-invert-active: transparent;
+$background-invert-disabled: transparent;
+
+$color-secondary-default: color('typography', 'base');
+$color-secondary-hover: color('typography', 'inverse');
+$color-secondary-focus: color('typography', 'inverse');
+$color-secondary-active: color('typography', 'inverse');
+$color-secondary-disabled: color('typography', 'base-50');
+
+$background-secondary-default: color('surface', 'base-3');
+$background-secondary-hover: color('surface', 'accent');
+$background-secondary-focus: color('surface', 'accent');
+$background-secondary-active: color('surface', 'accent-dark');
+$background-secondary-disabled: color('surface', 'base-3');
+
+$color-line-default: color('typography', 'base');
+$color-line-hover: color('typography', 'accent');
+$color-line-focus: color('typography', 'accent');
+$color-line-active: color('typography', 'accent-dark');
+$color-line-disabled: color('typography', 'base-50');
+
+$background-line-default: color('surface', 'base');
+$background-line-hover: color('surface', 'accent');
+$background-line-focus: color('surface', 'accent');
+$background-line-active: color('surface', 'accent-dark');
+$background-line-disabled: color('surface', 'base-50');

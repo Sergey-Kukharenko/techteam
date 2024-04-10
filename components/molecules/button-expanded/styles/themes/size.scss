@@ -1,0 +1,11 @@
+@use 'sass:map';
+
+@import '~/components/molecules/button/styles/themes/size';
+
+$button-expanded-size-m: map.deep-merge(
+    $button-size-m,
+    (
+        padding-right: 20px,
+        padding-left: 25px,
+    )
+);

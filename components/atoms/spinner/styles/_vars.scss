@@ -1,0 +1,23 @@
+$dot-size: 4px;
+$dot-margin: 4px;
+
+$dot-animation-opacity-from: 1;
+$dot-animation-opacity-to: 0.45;
+
+$dot-animation-timing-function: ease-in-out;
+$dot-animation-duration: 1s;
+
+$line-width: 15%;
+$line-height: 2px;
+
+$line-min-width: 80px;
+$line-max-width: 200px;
+
+$line-animation-timing-function: ease-out;
+$line-animation-duration: 0.8s;
+
+:root {
+  --spinner-dot-size: #{$dot-size};
+  --spinner-line-width: #{$line-width};
+  --spinner-line-height: #{$line-height};
+}

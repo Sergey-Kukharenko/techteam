@@ -1,0 +1,47 @@
+@use 'sass:map';
+
+$button-base-view: (
+  color: null,
+  background: null,
+  transition: (
+    timing-function: ease-in-out,
+    duration: 250ms,
+  ),
+);
+
+$button-link-view-main: map.deep-merge(
+  $button-base-view,
+  (
+    color: (
+      default: $color-main-default,
+      hover: $color-main-hover,
+      focus: $color-main-focus,
+      active: $color-main-active,
+      disabled: $color-main-disabled,
+    ),
+  )
+);
+$button-link-view-invert: map.deep-merge(
+  $button-base-view,
+  (
+    color: (
+      default: $color-invert-default,
+      hover: $color-invert-hover,
+      focus: $color-invert-focus,
+      active: $color-invert-active,
+      disabled: $color-invert-disabled,
+    ),
+  )
+);
+$button-link-view-secondary: map.deep-merge(
+  $button-base-view,
+  (
+    color: (
+      default: $color-secondary-default,
+      hover: $color-secondary-hover,
+      focus: $color-secondary-focus,
+      active: $color-secondary-active,
+      disabled: $color-secondary-disabled,
+    ),
+  )
+);

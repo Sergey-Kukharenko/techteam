@@ -1,0 +1,38 @@
+@import '~/styles/colors';
+@import '~/styles/helpers/_with';
+
+$name: 'ga-action';
+$block: '.' + $name;
+
+$regular-color-hover: color('typography', 'accent');
+$regular-color-focus: $regular-color-hover;
+$regular-color-active: color('typography', 'accent-dark');
+$regular-color-disabled: color('typography', 'base-30');
+
+$accent-color: color('typography', 'accent');
+$accent-color-hover: color('typography', 'accent-dark');
+$accent-color-focus: $accent-color-hover;
+$accent-color-active: $accent-color-hover;
+$accent-color-disabled: color('typography', 'base-30');
+
+$link-color: color('typography', 'accent-dark');
+
+$transition-duration: 150ms;
+$transition-duration-active: 0ms;
+$transition-timing-function: ease-in-out;
+
+@import './styles/mods/accent';
+@import './styles/mods/link';
+@import './styles/mods/regular';
+
+#{$block} {
+  transition-property: color;
+  transition-timing-function: $transition-timing-function;
+  transition-duration: $transition-duration;
+
+  @include with-anything {
+    &:active {
+      transition-duration: $transition-duration-active;
+    }
+  }
+}

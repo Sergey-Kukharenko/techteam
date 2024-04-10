@@ -1,0 +1,10 @@
+@import '~/styles/helpers/_resets';
+
+$name: 'ga-button-base';
+$block: '.' + $name;
+
+#{$block} {
+  @include reset-button;
+
+  touch-action: manipulation;
+}

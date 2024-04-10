@@ -1,0 +1,22 @@
+pairports:
+  http:
+    podport: 3000
+    svcport: 3000
+
+http:
+  enabled: true
+
+resources:
+  requests:
+    cpu: 1m
+    memory: 32Mi
+
+imagePullSecretCreator:
+  create: true
+  data: "eyJhdXRocyI6eyJnaXQuZ29sZGFwcGxlLnJ1Ojg0NDMiOnsiYXV0aCI6IlZFOUxSVTVmVkU5ZlIwVlVPbWRzY0dGMExXMDFjVzE0TmxOUlIyTkVSRk5SU21GM1dsaDUifX19Cg=="
+
+
+livenes_probe:
+  enabled: false
+readnes_probe:
+  enabled: false

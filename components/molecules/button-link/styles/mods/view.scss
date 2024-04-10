@@ -1,0 +1,13 @@
+#{$block} {
+  &_view_main {
+    @include set-button-link-view($button-link-view-main);
+  }
+
+  &_view_invert {
+    @include set-button-link-view($button-link-view-invert);
+  }
+
+  &_view_secondary {
+    @include set-button-link-view($button-link-view-secondary);
+  }
+}

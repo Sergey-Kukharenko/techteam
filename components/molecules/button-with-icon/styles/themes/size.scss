@@ -1,0 +1,20 @@
+@use 'sass:map';
+
+@import '../../../button/styles/themes/size';
+
+$button-with-icon-size-s: map.deep-merge(
+  $button-size-s,
+  (
+    padding-right: 20px,
+    padding-left: 20px,
+  )
+);
+
+$button-with-icon-size-m: map.deep-merge(
+  $button-size-m,
+  (
+    font-size: 11px,
+    padding-right: 25px,
+    padding-left: 25px,
+  )
+);
