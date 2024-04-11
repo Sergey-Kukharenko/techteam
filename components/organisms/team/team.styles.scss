@@ -6,59 +6,64 @@
 $name: "ga-team";
 $block: "." + $name;
 
-$height-mobile: 630px;
-$height-tablet: 1024px;
-
 $background-color: color("surface", "base");
 
-$content-padding-mobile: 40px 20px;
-$content-padding-x-tablet: 30px;
-
-$logo-icon-size-mobile: 55px;
-$logo-icon-size-desktop-small: 79px;
-$logo-icon-size-desktop: 79px;
+$content-padding-left-tablet-landscape: 30px;
+$content-padding-left-tablet: 45px;
+$content-padding-left-mobile: 20px;
 
 $title-color: color("surface", "inverse");
 
-$title-font-size-mobile: 72px;
-$title-font-size-desktop-small: 200px;
 $title-font-size-desktop: 250px;
+$title-font-size-tablet: 200px;
+$title-font-size-mobile: 120px;
 
-$title-line-height-mobile: 0.9;
-$title-line-height-desktop-small: 188px;
 $title-line-height-desktop: 212px;
+$title-line-height-desktop-small: 188px;
+$title-line-height-tablet: 182px;
+$title-line-height-mobile: 181px;
 
-$title-offset-mobile: 160px;
+$title-margin-top-widescreen-small: -44px;
+$title-margin-top-desktop: 34px;
+$title-margin-top-desktop-small: 24px;
 $title-margin-left-desktop-small: 10px;
-$title-margin-top-desktop-small: 46px;
-$title-margin-top-desktop: -22px;
+$title-margin-top-tablet-landscape: -29px;
+$title-margin-top-tablet: -80px;
+$title-margin-top-mobile: 6px;
 
-$title-word-margin-top-tablet: -8px;
+$title-gap-x-desktop: 26px;
+$title-gap-x-desktop-small: 22px;
+
+$title-word-margin-top-tablet: -2px;
+$title-word-margin-top-mobile: -73px;
 
 $subtitle-color: color("surface", "inverse");
 
-$subtitle-font-size-mobile: 14px;
-$subtitle-font-size-desktop-small: 20px;
 $subtitle-font-size-desktop: 20px;
+$subtitle-font-size-tablet: 20px;
+$subtitle-font-size-mobile: 16px;
 
-$subtitle-line-height-mobile: 19.6px;
-$subtitle-line-height-desktop-small: 22px;
 $subtitle-line-height-desktop: 22px;
+$subtitle-line-height-tablet: 22px;
+$subtitle-line-height-mobile: 22.4px;
 
-$subtitle-margin-right-desktop: 7px;
+$subtitle-left-desktop: -6px;
 
-$subtitle-offset-mobile: 9px;
-$subtitle-margin-top-tablet: 4px;
-$subtitle-margin-left-tablet: 1px;
 $subtitle-margin-left-desktop-small: 4px;
+$subtitle-margin-top-tablet-landscape: 5px;
+$subtitle-margin-left-tablet-landscape: 4px;
+$subtitle-left-tablet-landscape: 31px;
 
-$action-offset-mobile: auto;
-$action-offset-desktop-small: 26px;
-$action-offset-desktop: 25px;
+$subtitle-left-tablet: 4px;
 
-$action-max-width-mobile: none;
-$action-max-width-desktop-small: 335px;
-$action-max-width-desktop: 335px;
+$subtitle-margin-top-tablet: 29px;
+$subtitle-left-tablet: 46px;
+
+$subtitle-margin-top-mobile: -34px;
+$subtitle-left-mobile: 20px;
+
+$scroll-left-tablet: 30px;
+$scroll-left-mobile: 20px;
 
 #{$block} {
   @include bp-all {
@@ -97,11 +102,6 @@ $action-max-width-desktop: 335px;
       box-sizing: border-box;
     }
 
-    &__header {
-      display: flex;
-      align-items: center;
-    }
-
     &__title {
       font-family: $font-family-accent;
       color: $title-color;
@@ -111,12 +111,10 @@ $action-max-width-desktop: 335px;
     }
 
     &__subtitle {
+      position: absolute;
       color: $subtitle-color;
-      line-height: 160%;
-    }
-
-    &__action-icon {
-      margin: 0 0 0 10px;
+      right: 0;
+      margin: auto;
     }
 
     &__scroll-icon {
@@ -128,61 +126,81 @@ $action-max-width-desktop: 335px;
     }
   }
 
-  @include bp-till($bp-tablet) {
-    & {
-      height: $height-mobile;
-    }
-
-    &__content {
-      padding: $content-padding-mobile;
-      height: 100%;
-      display: flex;
-      flex-direction: column;
-    }
-
-    &__logo-icon {
-      width: $logo-icon-size-mobile;
-      height: $logo-icon-size-mobile;
-    }
-
+  @include bp-from($bp-widescreen-small) {
     &__title {
-      font-size: clamp(60px, 17vw, $title-font-size-mobile);
-      line-height: $title-line-height-mobile;
-      margin: $title-offset-mobile 0 0;
+      font-size: $title-font-size-desktop;
+      line-height: $title-line-height-desktop;
+      margin: $title-margin-top-widescreen-small 0 0 0;
+      gap: $title-gap-x-desktop;
     }
 
     &__subtitle {
-      font-size: $subtitle-font-size-mobile;
-      line-height: $subtitle-line-height-mobile;
-      margin: $subtitle-offset-mobile 0 0;
-    }
-
-    &__action {
-      max-width: $action-max-width-mobile;
-      margin: $action-offset-mobile 0 0;
+      font-size: $subtitle-font-size-desktop;
+      line-height: $subtitle-line-height-desktop;
+      left: $subtitle-left-desktop;
     }
   }
 
-  @include bp-between($bp-tablet, $bp-desktop-small) {
+  @include bp-between($bp-widescreen-small, $bp-fullhd) {
+    &__title {
+      margin: $title-margin-top-desktop 0 0 0;
+    }
+  }
+
+  @include bp-between($bp-desktop-small, $bp-widescreen-small) {
+    &__title {
+      font-size: $title-font-size-tablet;
+      line-height: $title-line-height-desktop-small;
+      margin: $title-margin-top-desktop-small 0 0
+        $title-margin-left-desktop-small;
+      gap: $title-gap-x-desktop-small;
+    }
+
+    &__subtitle {
+      font-size: $subtitle-font-size-tablet;
+      line-height: $subtitle-line-height-tablet;
+      left: $subtitle-margin-left-desktop-small;
+    }
+
+    &__scroll-icon {
+      left: $scroll-left-tablet;
+    }
+  }
+
+  @include bp-till($bp-desktop-small) {
     & {
       justify-content: flex-start;
       text-align: left;
     }
 
-    &__logo-icon {
-      width: $logo-icon-size-desktop-small;
-      height: $logo-icon-size-desktop-small;
+    &__title {
+      flex-direction: column;
     }
 
+    &__scroll-icon {
+      margin: 0;
+    }
+  }
+
+  @include bp-between($bp-tablet-landscape, $bp-desktop-small) {
     &__content {
-      padding: 0 $content-padding-x-tablet;
+      padding-left: $content-padding-left-tablet-landscape;
     }
 
     &__title {
-      font-size: $title-font-size-desktop-small;
-      line-height: $title-line-height-desktop-small;
-      margin: 0;
-      flex-direction: column;
+      margin: $title-margin-top-tablet-landscape 0 0 0;
+    }
+
+    &__subtitle {
+      margin-top: $subtitle-margin-top-tablet-landscape;
+      left: $subtitle-left-tablet-landscape;
+    }
+  }
+
+  @include bp-between($bp-tablet, $bp-desktop-small) {
+    &__title {
+      font-size: $title-font-size-tablet;
+      line-height: $title-line-height-tablet;
     }
 
     &__title-word {
@@ -190,70 +208,55 @@ $action-max-width-desktop: 335px;
     }
 
     &__subtitle {
-      font-size: $subtitle-font-size-desktop-small;
-      line-height: $subtitle-line-height-desktop-small;
-      margin: $subtitle-margin-top-tablet 0 0 $subtitle-margin-left-tablet;
-    }
-
-    &__action {
-      max-width: $action-max-width-desktop-small;
-      margin: $action-offset-desktop-small 0 0;
+      font-size: $subtitle-font-size-tablet;
+      line-height: $subtitle-line-height-tablet;
     }
 
     &__scroll-icon {
-      left: 30px;
-      margin: 0;
+      left: $scroll-left-tablet;
     }
   }
 
-  @include bp-between($bp-desktop-small, $bp-widescreen-small) {
-    &__logo-icon {
-      width: $logo-icon-size-desktop-small;
-      height: $logo-icon-size-desktop-small;
+  @include bp-between($bp-tablet, $bp-tablet-landscape) {
+    &__content {
+      padding-left: $content-padding-left-tablet;
     }
 
     &__title {
-      font-size: $title-font-size-desktop-small;
-      line-height: $title-line-height-desktop-small;
-      margin: $title-margin-top-desktop-small 0 0
-        $title-margin-left-desktop-small;
-      gap: 22px;
+      margin: $title-margin-top-tablet 0 0 0;
     }
 
     &__subtitle {
-      font-size: $subtitle-font-size-desktop-small;
-      line-height: $subtitle-line-height-desktop-small;
-      margin: 0 0 0 $subtitle-margin-left-desktop-small;
-    }
-
-    &__action {
-      max-width: $action-max-width-desktop-small;
-      margin: $action-offset-desktop-small 0 0;
+      margin-top: $subtitle-margin-top-tablet;
+      left: $subtitle-left-tablet;
     }
   }
 
-  @include bp-from($bp-widescreen-small) {
-    &__logo-icon {
-      width: $logo-icon-size-desktop;
-      height: $logo-icon-size-desktop;
+  @include bp-till($bp-tablet) {
+    &__content {
+      padding-left: $content-padding-left-mobile;
     }
 
     &__title {
-      font-size: $title-font-size-desktop;
-      line-height: $title-line-height-desktop;
-      margin: $title-margin-top-desktop 0 0 0;
-      gap: 26px;
+      font-size: $title-font-size-mobile;
+      line-height: $title-line-height-mobile;
+      margin: $title-margin-top-mobile 0 0 0;
+    }
+
+    &__title-word {
+      margin-top: $title-word-margin-top-mobile;
     }
 
     &__subtitle {
-      font-size: $subtitle-font-size-desktop;
-      line-height: $subtitle-line-height-desktop;
-      margin-right: $subtitle-margin-right-desktop;
+      font-size: $subtitle-font-size-mobile;
+      font-weight: 400;
+      line-height: $subtitle-line-height-mobile;
+      margin-top: $subtitle-margin-top-mobile;
+      left: $subtitle-left-mobile;
     }
 
-    &__action {
-      max-width: $action-max-width-desktop;
-      margin: $action-offset-desktop 0 0;
+    &__scroll-icon {
+      left: $scroll-left-mobile;
     }
   }
 }

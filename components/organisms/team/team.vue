@@ -7,14 +7,6 @@
     />
 
     <div :class="b('content')">
-      <header :class="b('header')" style="display: none">
-        <GaAction :class="b('logo')" nuxt href="/">
-          <GaIcon :class="b('logo-icon')">
-            <GaIconPrimaryLogo />
-          </GaIcon>
-        </GaAction>
-      </header>
-
       <h1 :class="b('title')">
         <span :class="b('title-word')">Ga</span>
         <span :class="b('title-word')">tech team</span>
@@ -30,11 +22,7 @@
 </template>
 
 <script setup lang="ts">
-import { GaIconPrimaryLogo } from "@ga/icons";
 import { GaImage } from "~/components/atoms/image";
-
-import { GaAction } from "~/components/molecules/action";
-import { GaIcon } from "~/components/atoms/icon";
 
 defineOptions({
   name: "GaTeam",

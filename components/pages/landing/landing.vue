@@ -1,6 +1,6 @@
 <template>
   <GaTeam />
-  <!--  <GaAdvantages />-->
+  <!--    <GaAdvantages />-->
   <!--  <GaFacts />-->
   <!--  <GaPartnership />-->
   <!--  <GaScheme />-->
