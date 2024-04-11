@@ -161,10 +161,6 @@ $scroll-left-mobile: 20px;
       line-height: $subtitle-line-height-tablet;
       left: $subtitle-margin-left-desktop-small;
     }
-
-    &__scroll-icon {
-      left: $scroll-left-tablet;
-    }
   }
 
   @include bp-till($bp-desktop-small) {
