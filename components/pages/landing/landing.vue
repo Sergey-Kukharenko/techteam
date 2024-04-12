@@ -1,6 +1,8 @@
 <template>
-  <GaTeam />
-  <!--    <GaAdvantages />-->
+  <!--  <GaTeam />-->
+  <GaOurProducts />
+
+  <!--  <GaAdvantages />-->
   <!--  <GaFacts />-->
   <!--  <GaPartnership />-->
   <!--  <GaScheme />-->
@@ -16,4 +18,5 @@ import { GaPartnership } from "~/components/organisms/partnership";
 import { GaScheme } from "~/components/organisms/scheme";
 import { GaQuestions } from "~/components/organisms/questions";
 import { GaFooter } from "~/components/organisms/footer";
+import GaOurProducts from "~/components/organisms/our-products/our-products.vue";
 </script>
