@@ -5,7 +5,7 @@
     <div :class="b('list')">
       <div :class="b('item')" v-for="(item, idx) in list" :key="idx">
         <div :class="b('col')">
-          <GaImage :class="b('img')" v-bind="backgroundAttrs" />
+          <GaImage :class="b('img')" v-bind="imgAttrs" />
         </div>
         <div :class="b('col')">
           <div :class="b('content-title')" v-html="item.title"></div>
@@ -67,7 +67,7 @@ const list = [
   },
 ];
 
-const backgroundAttrs = {
+const imgAttrs = {
   src: "/our-products/our-products-desktop.jpg",
 
   sources: [
