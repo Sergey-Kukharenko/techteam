@@ -2,14 +2,14 @@
   <!--  <GaTeam />-->
   <!--  <GaOurProducts />-->
   <!--  <GaAbout />-->
-  <GaJoin />
+  <!--  <GaJoin />-->
+  <GaFooter />
 
   <!--  <GaAdvantages />-->
   <!--  <GaFacts />-->
   <!--  <GaPartnership />-->
   <!--  <GaScheme />-->
   <!--  <GaQuestions />-->
-  <!--  <GaFooter />-->
 </template>
 
 <script setup>
