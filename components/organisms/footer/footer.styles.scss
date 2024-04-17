@@ -23,6 +23,11 @@ $footer-padding-x-mobile: 20px;
 $container-max-width: 1530px;
 $container-margin-bottom-tablet: 20px;
 
+// col
+$col-width-desktop: 50%;
+$col-column-gap-desktop: 130px;
+$col-column-gap-desktop-small: 100px;
+
 // icon
 $icon-size-desktop: 90px;
 $icon-size-desktop-small: 75px;
@@ -60,7 +65,6 @@ $description-max-width-mobile: 400px;
 
     &__icon {
       flex-shrink: 0;
-      background: #fff;
     }
 
     &__title,
@@ -92,6 +96,16 @@ $description-max-width-mobile: 400px;
       width: $icon-size-desktop;
       height: $icon-size-desktop;
     }
+
+    &__col {
+      column-gap: $col-column-gap-desktop;
+    }
+  }
+
+  @include bp-between($bp-desktop-tilda, $bp-widescreen-small) {
+    &__col {
+      column-gap: $col-column-gap-desktop-small;
+    }
   }
 
   @include bp-between($bp-desktop-small, $bp-widescreen-small) {
@@ -111,19 +125,19 @@ $description-max-width-mobile: 400px;
       align-items: center;
       flex-wrap: wrap;
       margin: 0 auto;
+      max-width: $container-max-width;
+    }
+
+    &__col {
+      width: $col-width-desktop;
+      display: flex;
+      align-items: center;
     }
   }
 
   @include bp-till($bp-desktop-tilda) {
     &__content {
       margin-top: $content-margin-top-mobile;
-    }
-  }
-
-  @include bp-from($bp-desktop-small) {
-    &__container {
-      max-width: $container-max-width;
-      justify-content: space-between;
     }
   }
 
@@ -140,11 +154,14 @@ $description-max-width-mobile: 400px;
       width: $icon-size-tablet;
       height: $icon-size-tablet;
     }
+
+    &__description {
+      max-width: $description-max-width-mobile;
+    }
   }
 
   @include bp-from($bp-tablet) {
     &__description {
-      max-width: $description-max-width-mobile;
       column-gap: $description-column-gap-desktop;
       margin-top: $description-margin-top-desktop;
     }

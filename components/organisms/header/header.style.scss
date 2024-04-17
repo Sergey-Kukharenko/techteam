@@ -1,0 +1,15 @@
+@import "~/styles/_breakpoints";
+@import "~/styles/colors";
+@import "~/styles/helpers/_typography";
+@import "~/styles/helpers/_layout";
+
+$name: "ga-header";
+$block: "." + $name;
+
+#{$block} {
+  @include bp-all {
+    &__title {
+      color: #1cd344;
+    }
+  }
+}
