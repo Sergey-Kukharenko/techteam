@@ -1,5 +1,5 @@
 <template>
-  <section :class="b()">
+  <section :class="b()" id="about">
     <h2 :class="b('title')">о компании</h2>
     <div :class="b('list')">
       <div :class="b('item')" v-for="(item, idx) in list" :key="idx">

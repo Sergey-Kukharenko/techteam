@@ -26,11 +26,15 @@ $header-padding-x-tablet-landscape: 30px;
 $header-padding-y-tablet: 40px;
 $header-padding-x-tablet: 45px;
 
+$header-padding-y-mobile: 27px;
+$header-padding-x-mobile: 20px;
+
 // nav
 $nav-column-gap-desktop: 40px;
 $nav-column-gap-desktop-small: 35px;
 
 $nav-row-gap-tablet: 30px;
+$nav-row-gap-mobile: 15px;
 
 // link
 $link-color-desktop: #fff;
@@ -42,27 +46,55 @@ $link-margin-top-desktop: 1px;
 
 $link-font-size-tablet: 35px;
 $link-line-height-tablet: 38.5px;
+$link-margin-top-tablet: 62px;
+$link-column-gap-tablet: 37px;
+$link-letter-spacing-tablet: 1px;
+$link-translateY-tablet: -1px;
 
-$link-margin-top-tablet: 62.5px;
-
+$link-font-size-mobile: 30px;
+$link-line-height-mobile: 33px;
+$link-margin-top-mobile: 59px;
+$link-column-gap-mobile: 19px;
 $link-color-mobile: #000;
-$link-letter-spacing-mobile: 1px;
+$link-letter-spacing-mobile: 0.5px;
+$link-translateY-mobile: -3px;
 
 // nav-link
 $nav-link-font-size-tablet: 90px;
 $nav-link-line-height-tablet: 99px;
 
+$nav-link-font-size-mobile: 55px;
+$nav-link-line-height-mobile: 60.5px;
+
 // arrow
 $arrow-width: 15px;
 $arrow-margin-top: -1px;
+
+// arrow-long
+$arrow-long-width: 58px;
+$arrow-long-margin-top: 5px;
+
+$arrow-long-width-mobile: 28px;
 
 // container
 $container-padding-y-tablet: 40px;
 $container-padding-x-tablet: 45px;
 
-body {
-  background: #4d4d4d;
-}
+$container-padding-x-mobile: 20px;
+
+// modal-header
+$modal-header-padding-y-tablet: 60px;
+$modal-header-padding-y-mobile: 30px;
+
+// burger
+$burger-top-tablet: -10px;
+$burger-close-right-tablet: -5px;
+
+$burger-width-mobile: 30px;
+$burger-top-mobile: -12px;
+
+$burger-close-width-mobile: 15px;
+$burger-close-top-mobile: -4px;
 
 #{$block} {
   @include bp-all {
@@ -72,7 +104,11 @@ body {
       justify-content: space-between;
       max-width: $header-max-width;
       margin: 0 auto;
-      outline: 1px solid #fff;
+      position: fixed;
+      top: 0;
+      right: 0;
+      left: 0;
+      z-index: 1;
     }
 
     &__icon {
@@ -84,9 +120,16 @@ body {
       justify-content: center;
     }
 
+    &__nav-link,
+    &__link {
+      cursor: pointer;
+    }
+
     &__link {
       display: flex;
       align-items: center;
+      position: relative;
+      z-index: 1;
     }
   }
 
@@ -146,11 +189,19 @@ body {
       stroke: $link-color-desktop;
       margin-top: $arrow-margin-top;
     }
+
+    &__desktop {
+      display: block;
+    }
+
+    &__mobile {
+      display: none;
+    }
   }
 
   @include bp-till($bp-tablet-large) {
     &__modal {
-      display: flex;
+      display: none;
       align-items: center;
       position: fixed;
       top: 0;
@@ -159,6 +210,23 @@ body {
       bottom: 0;
       z-index: 1;
       background: $color-brand;
+
+      &_show {
+        display: flex;
+      }
+    }
+
+    &__modal-header {
+      display: flex;
+      justify-content: space-between;
+      position: absolute;
+      top: 0;
+      left: 0;
+      right: 0;
+    }
+
+    &__burger {
+      position: relative;
     }
 
     &__nav {
@@ -167,14 +235,28 @@ body {
 
     &__nav-link,
     &__link {
-      font-family: $font-family-accent;
       font-weight: $link-font-weight;
       color: $link-color-mobile;
-      letter-spacing: $link-letter-spacing-mobile;
+    }
+
+    &__nav-link {
+      letter-spacing: $link-letter-spacing-tablet;
     }
 
     &__nav-link {
       font-family: $font-family-accent;
+    }
+
+    &__arrow-long {
+      stroke: $link-color-mobile;
+    }
+
+    &__desktop {
+      display: none;
+    }
+
+    &__mobile {
+      display: block;
     }
   }
 
@@ -199,14 +281,19 @@ body {
       padding: $header-padding-y-tablet $header-padding-x-tablet;
     }
 
+    &__modal-header {
+      padding: $modal-header-padding-y-tablet $header-padding-x-tablet;
+    }
+
     &__container {
-      padding: $container-padding-y-tablet $container-padding-x-tablet;
+      padding: 0 $container-padding-x-tablet;
     }
 
     &__icon {
       width: $icon-size-tablet;
       height: $icon-size-tablet;
     }
+
     &__nav {
       row-gap: $nav-row-gap-tablet;
     }
@@ -217,22 +304,84 @@ body {
     }
 
     &__link {
+      font-family: $font-family-secondary;
       font-size: $link-font-size-tablet;
       line-height: $link-line-height-tablet;
       margin-top: $link-margin-top-tablet;
+      column-gap: $link-column-gap-tablet;
+      letter-spacing: $link-letter-spacing-tablet;
+      transform: translateY($link-translateY-tablet);
     }
 
-    &__arrow {
-      width: $arrow-width;
-      stroke: $link-color-mobile;
-      margin-top: $arrow-margin-top;
+    &__arrow-long {
+      width: $arrow-long-width;
+      margin-top: $arrow-long-margin-top;
+    }
+
+    &__burger {
+      position: relative;
+      top: $burger-top-tablet;
+    }
+
+    &__modal {
+      #{$block}__burger {
+        top: 0;
+        right: $burger-close-right-tablet;
+      }
     }
   }
 
   @include bp-till($bp-tablet) {
+    & {
+      padding: $header-padding-y-mobile $header-padding-x-mobile;
+    }
+
+    &__modal-header {
+      padding: $modal-header-padding-y-mobile $header-padding-x-mobile;
+    }
+
+    &__container {
+      padding: 0 $container-padding-x-mobile;
+    }
+
     &__icon {
       width: $icon-size-mobile;
       height: $icon-size-mobile;
+    }
+
+    &__nav {
+      row-gap: $nav-row-gap-mobile;
+    }
+
+    &__nav-link {
+      font-size: $nav-link-font-size-mobile;
+      line-height: $nav-link-line-height-mobile;
+    }
+
+    &__link {
+      font-family: $font-family-accent;
+      font-size: $link-font-size-mobile;
+      line-height: $link-line-height-mobile;
+      letter-spacing: $link-letter-spacing-mobile;
+      margin-top: $link-margin-top-mobile;
+      column-gap: $link-column-gap-mobile;
+      transform: translateY($link-translateY-mobile);
+    }
+
+    &__arrow-long {
+      width: $arrow-long-width-mobile;
+    }
+
+    &__burger {
+      width: $burger-width-mobile;
+      top: $burger-top-mobile;
+    }
+
+    &__modal {
+      #{$block}__burger {
+        width: $burger-close-width-mobile;
+        top: $burger-close-top-mobile;
+      }
     }
   }
 }

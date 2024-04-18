@@ -1,5 +1,5 @@
 <template>
-  <footer :class="b()">
+  <footer :class="b()" id="contacts">
     <div :class="b('container')">
       <div :class="b('col')">
         <GaIconPrimaryLogo appearance="white" :class="b('icon')" />

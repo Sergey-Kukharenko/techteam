@@ -1,5 +1,5 @@
 <template>
-  <section :class="b()">
+  <section :class="b()" id="our-products">
     <h2 :class="b('title')">наши продукты</h2>
 
     <div :class="b('list')">

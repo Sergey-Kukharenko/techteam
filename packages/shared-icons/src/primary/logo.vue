@@ -32,7 +32,7 @@ defineProps({
   appearance: {
     type: String,
     default: "default",
-    validator(value) {
+    validator(value: string) {
       return ["default", "white", "black"].includes(value);
     },
   },
