@@ -68,7 +68,7 @@ const list = [
 ];
 
 const imgAttrs = {
-  src: "/our-products/our-products-desktop.jpg",
+  src: "/our-products/1920.jpg",
 
   sources: [
     {

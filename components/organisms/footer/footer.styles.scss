@@ -1,3 +1,4 @@
+@import "~/styles/_variables";
 @import "~/styles/colors";
 @import "~/styles/_breakpoints";
 @import "~/styles/helpers/_layout";
@@ -20,7 +21,6 @@ $footer-padding-y-mobile: 50px;
 $footer-padding-x-mobile: 20px;
 
 // container
-$container-max-width: 1530px;
 $container-margin-bottom-tablet: 20px;
 
 // col
@@ -125,7 +125,7 @@ $description-max-width-mobile: 400px;
       align-items: center;
       flex-wrap: wrap;
       margin: 0 auto;
-      max-width: $container-max-width;
+      max-width: $grid-inner;
     }
 
     &__col {

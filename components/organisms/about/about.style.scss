@@ -1,3 +1,4 @@
+@import "~/styles/_variables";
 @import "~/styles/_breakpoints";
 @import "~/styles/colors";
 @import "~/styles/helpers/_typography";
@@ -5,8 +6,6 @@
 
 $name: "ga-about";
 $block: "." + $name;
-
-$background-color: yellow;
 
 // section
 $section-y-desktop: 132px;
@@ -45,9 +44,6 @@ $title-line-height-tablet-landscape: 99px;
 
 $title-font-size-mobile: 85px;
 $title-line-height-mobile: 63.75px;
-
-// list
-$row-max-width-desktop: 1530px;
 
 // item
 $item-border-bottom-color: #000;
@@ -118,7 +114,7 @@ $content-description-margin-bottom-mobile: -10px;
     }
 
     &__row {
-      max-width: $row-max-width-desktop;
+      max-width: $grid-inner;
       display: flex;
       margin: 0 auto;
       box-sizing: border-box;

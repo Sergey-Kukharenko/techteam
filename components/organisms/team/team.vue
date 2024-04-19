@@ -31,34 +31,58 @@ defineOptions({
 const b = useBem();
 
 const backgroundAttrs = {
-  src: "/team/team-desktop@1x.jpg",
+  src: "/team/1920.jpg",
 
   sources: [
     {
-      srcset: ["/team/team-mobile@1x.jpg"],
+      srcset: ["/team/375.jpg"],
       ext: "jpg",
       media: {
         till: 768,
       },
     },
     {
-      srcset: ["/team/team-tablet@1x.jpg"],
+      srcset: ["/team/768.jpg"],
       ext: "jpg",
       media: {
         from: 768,
+        till: 1024,
+      },
+    },
+    {
+      srcset: ["/team/1024.jpg"],
+      ext: "jpg",
+      media: {
+        from: 1024,
+        till: 1280,
+      },
+    },
+    {
+      srcset: ["/team/1280.jpg"],
+      ext: "jpg",
+      media: {
+        from: 1280,
         till: 1360,
       },
     },
     {
-      srcset: ["/team/team-desktop@1x.jpg"],
+      srcset: ["/team/1360.jpg"],
       ext: "jpg",
       media: {
         from: 1360,
+        till: 1680,
+      },
+    },
+    {
+      srcset: ["/team/1680.jpg"],
+      ext: "jpg",
+      media: {
+        from: 1680,
         till: 1920,
       },
     },
     {
-      srcset: ["/team/team-desktop-large@1x.jpg"],
+      srcset: ["/team/1920.jpg"],
       ext: "jpg",
       media: {
         from: 1920,

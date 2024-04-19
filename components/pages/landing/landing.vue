@@ -15,3 +15,14 @@ import GaAbout from "~/components/organisms/about/about.vue";
 import GaJoin from "~/components/organisms/join/join.vue";
 import GaFooter from "~/components/organisms/footer/footer.vue";
 </script>
+
+<style>
+.no-scroll {
+  height: 100vh;
+  width: 100vw;
+  touch-action: none;
+  -webkit-overflow-scrolling: none;
+  overflow: hidden;
+  overscroll-behavior: none;
+}
+</style>

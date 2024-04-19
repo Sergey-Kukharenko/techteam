@@ -1,3 +1,4 @@
+@import "~/styles/_variables";
 @import "~/styles/_breakpoints";
 @import "~/styles/colors";
 @import "~/styles/helpers/_typography";
@@ -14,7 +15,6 @@ $icon-size-tablet: 80px;
 $icon-size-mobile: 55px;
 
 // header
-$header-max-width: 1530px;
 $header-padding-y-desktop: 40px;
 $header-padding-x-desktop: 40px;
 
@@ -102,7 +102,7 @@ $burger-close-top-mobile: -4px;
       display: flex;
       align-items: flex-start;
       justify-content: space-between;
-      max-width: $header-max-width;
+      max-width: $grid-inner;
       margin: 0 auto;
       position: fixed;
       top: 0;

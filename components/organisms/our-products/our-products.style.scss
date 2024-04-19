@@ -1,3 +1,4 @@
+@import "~/styles/_variables";
 @import "~/styles/_breakpoints";
 @import "~/styles/colors";
 @import "~/styles/helpers/_typography";
@@ -32,7 +33,6 @@ $title-font-size-mobile: 85px;
 $title-letter-spacing-mobile: 63.75px;
 
 // list
-$list-max-width-desktop: 1530px;
 $list-margin-top-desktop: 133px;
 $list-row-gap-desktop: 120px;
 $list-row-gap-desktop-small: 100px;
@@ -147,7 +147,7 @@ $action-max-width: 243px;
     }
 
     &__list {
-      max-width: $list-max-width-desktop;
+      max-width: $grid-inner;
     }
 
     &__content-description {
