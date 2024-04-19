@@ -48,7 +48,8 @@ $title-line-height-mobile: 63.75px;
 // item
 $item-border-bottom-color: #000;
 $item-margin-bottom-desktop: 9px;
-$item-margin-bottom-mobile: 34px;
+$item-margin-bottom-tablet-landscape: 7px;
+$item-margin-bottom-tablet: 14px;
 
 // row
 $row-padding-min-height-widescreen-small: 220px;
@@ -60,6 +61,7 @@ $row-padding-x-tablet: 60px;
 $row-padding-y-mobile: 54px;
 $row-padding-x-mobile: 20px;
 $row-gap-mobile: 23px;
+$row-min-height-mobile: 237px;
 
 // col
 $col-width-desktop: 50%;
@@ -108,7 +110,6 @@ $content-description-margin-bottom-mobile: -10px;
 
     &__item {
       &:not(:last-child) {
-        margin-bottom: $item-margin-bottom-desktop;
         border-bottom: 1px solid $item-border-bottom-color;
       }
     }
@@ -219,6 +220,12 @@ $content-description-margin-bottom-mobile: -10px;
     &__col {
       width: $col-width-desktop;
     }
+
+    &__item {
+      &:not(:last-child) {
+        margin-bottom: $item-margin-bottom-desktop;
+      }
+    }
   }
 
   @include bp-between($bp-tablet-large, $bp-desktop) {
@@ -277,6 +284,22 @@ $content-description-margin-bottom-mobile: -10px;
     }
   }
 
+  @include bp-between($bp-tablet-large, $bp-desktop-small) {
+    &__item {
+      &:not(:last-child) {
+        margin-bottom: $item-margin-bottom-tablet-landscape;
+      }
+    }
+  }
+
+  @include bp-between($bp-tablet, $bp-tablet-large) {
+    &__item {
+      &:not(:last-child) {
+        margin-bottom: $item-margin-bottom-tablet;
+      }
+    }
+  }
+
   @include bp-from($bp-tablet) {
     &__row {
       align-items: center;
@@ -306,6 +329,7 @@ $content-description-margin-bottom-mobile: -10px;
     &__row {
       padding: $row-padding-y-mobile $row-padding-x-mobile;
       gap: $row-gap-mobile;
+      min-height: $row-min-height-mobile;
     }
 
     &__col:first-child {
@@ -317,12 +341,6 @@ $content-description-margin-bottom-mobile: -10px;
       font-size: $title-font-size-mobile;
       line-height: $title-line-height-mobile;
       padding: 0 $offset-x-mobile;
-    }
-
-    &__item {
-      &:not(:last-child) {
-        margin-bottom: $item-margin-bottom-mobile;
-      }
     }
 
     &__number {

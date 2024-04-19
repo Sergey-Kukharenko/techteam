@@ -9,15 +9,18 @@ $block: "." + $name;
 
 // footer
 $background: #101010;
-$footer-padding-y-desktop: 83px;
+$footer-padding-top-desktop: 83px;
+$footer-padding-bottom-desktop: 74px;
 $footer-padding-x-desktop: 40px;
 
 $footer-padding-y-desktop-small: 58px;
 $footer-padding-x-desktop-small: 40px;
 
-$footer-padding-y-tablet: 100px;
+$footer-padding-top-tablet: 100px;
+$footer-padding-bottom-tablet: 80px;
 $footer-padding-x-tablet: 45px;
-$footer-padding-y-mobile: 50px;
+$footer-padding-top-mobile: 50px;
+$footer-padding-bottom-mobile: 15px;
 $footer-padding-x-mobile: 20px;
 
 // container
@@ -35,7 +38,11 @@ $icon-size-tablet: 61px;
 $icon-size-mobile: 55px;
 
 // content
-$content-margin-top-mobile: 40px;
+$content-margin-top-tablet: 34px;
+$content-margin-bottom-tablet: 40px;
+
+$content-margin-top-mobile: 33px;
+$content-margin-bottom-mobile: 40px;
 $content-row-gap-mobile: 9px;
 
 // title
@@ -89,7 +96,8 @@ $description-max-width-mobile: 400px;
 
   @include bp-from($bp-widescreen-small) {
     & {
-      padding: $footer-padding-y-desktop $footer-padding-x-desktop;
+      padding: $footer-padding-top-desktop $footer-padding-x-desktop
+        $footer-padding-bottom-desktop;
     }
 
     &__icon {
@@ -135,15 +143,16 @@ $description-max-width-mobile: 400px;
     }
   }
 
-  @include bp-till($bp-desktop-tilda) {
+  @include bp-between($bp-tablet, $bp-desktop-tilda) {
     &__content {
-      margin-top: $content-margin-top-mobile;
+      margin: $content-margin-top-tablet 0 $content-margin-bottom-tablet;
     }
   }
 
   @include bp-between($bp-tablet, $bp-desktop-small) {
     & {
-      padding: $footer-padding-y-tablet $footer-padding-x-tablet;
+      padding: $footer-padding-top-tablet $footer-padding-x-tablet
+        $footer-padding-bottom-tablet;
     }
 
     &__container {
@@ -169,7 +178,8 @@ $description-max-width-mobile: 400px;
 
   @include bp-till($bp-tablet) {
     & {
-      padding: $footer-padding-y-mobile $footer-padding-x-mobile;
+      padding: $footer-padding-top-mobile $footer-padding-x-mobile
+        $footer-padding-bottom-mobile;
     }
 
     &__icon {
@@ -181,6 +191,7 @@ $description-max-width-mobile: 400px;
       display: flex;
       flex-direction: column;
       row-gap: $content-row-gap-mobile;
+      margin: $content-margin-top-mobile 0 $content-margin-bottom-mobile;
     }
 
     &__description {

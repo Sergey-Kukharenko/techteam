@@ -90,6 +90,7 @@ $content-description-margin-bottom-mobile: 29px;
 
 // action
 $action-max-width: 243px;
+$arrow-translate-x: -5px;
 
 #{$block} {
   @include bp-all {
@@ -138,6 +139,10 @@ $action-max-width: 243px;
 
     &__action {
       max-width: $action-max-width;
+    }
+
+    &__arrow {
+      transform: translateX($arrow-translate-x);
     }
   }
 

@@ -21,7 +21,7 @@
           :class="b('action')"
         >
           <template #icon>
-            <GaIconPrimaryArrow />
+            <GaIconPrimaryArrow :class="b('arrow')" />
           </template>
         </GaButtonExpanded>
       </div>

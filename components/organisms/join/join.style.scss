@@ -11,6 +11,7 @@ $container-padding-y-desktop: 58px;
 $container-padding-x-desktop: 30px;
 
 $container-padding-y-tablet: 80px;
+$container-padding-bottom-tablet: 49px;
 $container-padding-x-tablet: 46px;
 
 $container-height-mobile: 100%;
@@ -28,6 +29,7 @@ $title-color: color("surface", "inverse");
 $title-font-size-desktop: 120px;
 $title-line-height-desktop: 96px;
 $title-letter-spacing-desktop: 2px;
+$title-margin-left-desktop: -2px;
 
 $title-font-size-desktop-small: 100px;
 $title-line-height-desktop-small: 80px;
@@ -58,6 +60,10 @@ $description-margin-top-mobile: 16px;
 
 // action
 $action-width-desktop: 264px;
+$action-margin-left-desktop: -3px;
+
+// arrow
+$arrow-translateX-desktop: -5px;
 
 #{$block} {
   @include bp-all {
@@ -107,6 +113,11 @@ $action-width-desktop: 264px;
     &__title {
       font-size: $title-font-size-desktop;
       line-height: $title-line-height-desktop;
+      margin-left: $title-margin-left-desktop;
+    }
+
+    &__action {
+      margin-left: $action-margin-left-desktop;
     }
   }
 
@@ -141,6 +152,10 @@ $action-width-desktop: 264px;
     &__action {
       width: $action-width-desktop;
     }
+
+    &__arrow {
+      transform: translateX($arrow-translateX-desktop);
+    }
   }
 
   @include bp-between($bp-tablet-large, $bp-desktop-small) {
@@ -159,7 +174,8 @@ $action-width-desktop: 264px;
 
   @include bp-between($bp-tablet, $bp-tablet-large) {
     &__container {
-      padding: $container-padding-y-tablet $container-padding-x-tablet;
+      padding: $container-padding-y-tablet $container-padding-x-tablet
+        $container-padding-bottom-tablet;
     }
 
     &__title {
