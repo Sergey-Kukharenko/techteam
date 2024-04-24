@@ -104,15 +104,29 @@ $burger-close-top-mobile: -4px;
       justify-content: space-between;
       max-width: $grid-inner;
       margin: 0 auto;
-      position: absolute;
+      position: fixed;
       top: 0;
       right: 0;
       left: 0;
       z-index: 1;
+      background: green;
+
+      &_mix-blend {
+        //mix-blend-mode: difference;
+        background: red;
+      }
+    }
+
+    &__logo {
+      height: 0;
+      mix-blend-mode: inherit;
     }
 
     &__icon {
+      display: block;
       flex-shrink: 0;
+      position: relative;
+      z-index: 2;
     }
 
     &__nav {
@@ -168,6 +182,7 @@ $burger-close-top-mobile: -4px;
       position: absolute;
       left: 0;
       right: 0;
+      z-index: 1;
       margin: auto;
     }
 

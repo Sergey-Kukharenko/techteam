@@ -1,5 +1,5 @@
 <template>
-  <section :class="b()" id="join">
+  <section :class="b()" id="join" class="with-bg">
     <GaImage
       :class-name="b('background-img')"
       :class="b('background')"
@@ -33,6 +33,7 @@
 import { GaImage } from "~/components/atoms/image";
 import { GaButtonExpanded } from "~/components/molecules/button-expanded";
 import { GaIconPrimaryArrow } from "@ga/icons";
+import Header from "~/components/organisms/header/header.vue";
 
 defineOptions({
   name: "GaJoin",

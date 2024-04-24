@@ -1,5 +1,5 @@
 <template>
-  <section :class="b()">
+  <section :class="b()" class="with-bg">
     <GaImage
       :class-name="b('background-img')"
       :class="b('background')"
@@ -23,6 +23,7 @@
 
 <script setup lang="ts">
 import { GaImage } from "~/components/atoms/image";
+import Header from "~/components/organisms/header/header.vue";
 
 defineOptions({
   name: "GaTeam",

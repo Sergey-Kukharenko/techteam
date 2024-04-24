@@ -100,6 +100,8 @@ $content-description-margin-bottom-mobile: -10px;
 
 #{$block} {
   @include bp-all {
+    background: #fff;
+
     &__title {
       font-family: $font-family-accent;
       font-weight: $title-font-weight;

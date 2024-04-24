@@ -1,7 +1,9 @@
 <template>
-  <header :class="b()">
+  <!--  <div :class="[b(), b('logo')]">-->
+  <!--    <GaIconPrimaryLogo :class="b('icon')" />-->
+  <!--  </div>-->
+  <header :class="[b(), b({ 'mix-blend': mixBLend })]">
     <GaIconPrimaryLogo :class="b('icon')" />
-
     <div :class="b('modal', { show })">
       <div :class="b('modal-header')">
         <GaIconPrimaryLogo
@@ -87,6 +89,36 @@ const scrollTo = (id: string) => {
   const element = document.getElementById(id);
   element && element.scrollIntoView({ behavior: "smooth" });
 };
+
+const mixBLend = ref(false);
+
+onMounted(() => {
+  const options = {
+    // root: null,
+    rootMargin: "-1% 0% -99% 0%",
+  };
+
+  const sectionObserver = new IntersectionObserver(callBackFunction, options);
+
+  // const header = document.querySelector("header");
+
+  const sections = document.querySelectorAll(".with-bg");
+  for (let i = 0; i < sections.length; i++) {
+    sectionObserver.observe(sections[i]);
+  }
+
+  function callBackFunction(entries) {
+    const [entry] = entries;
+    console.log(entry);
+    if (entry.isIntersecting) {
+      // header.classList.remove("mix-blend");
+      mixBLend.value = false;
+    } else {
+      // header.classList.add("mix-blend");
+      mixBLend.value = true;
+    }
+  }
+});
 </script>
 
 <style src="./header.style.scss" lang="scss" module />
