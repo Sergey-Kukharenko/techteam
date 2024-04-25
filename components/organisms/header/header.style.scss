@@ -109,11 +109,9 @@ $burger-close-top-mobile: -4px;
       right: 0;
       left: 0;
       z-index: 1;
-      background: green;
 
       &_mix-blend {
-        //mix-blend-mode: difference;
-        background: red;
+        mix-blend-mode: difference;
       }
     }
 
@@ -223,7 +221,7 @@ $burger-close-top-mobile: -4px;
       left: 0;
       right: 0;
       bottom: 0;
-      z-index: 1;
+      z-index: 2;
       background: $color-brand;
 
       &_show {
@@ -260,10 +258,6 @@ $burger-close-top-mobile: -4px;
 
     &__nav-link {
       font-family: $font-family-accent;
-    }
-
-    &__arrow-long {
-      stroke: $link-color-mobile;
     }
 
     &__desktop {

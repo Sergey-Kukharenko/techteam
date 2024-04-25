@@ -72,15 +72,22 @@ const nav = [
 ];
 
 const show = ref<Boolean>(false);
+const mixBLend = ref(false);
+const mixBLendBeforeOpen = ref(false);
 
 const openModal = () => {
   show.value = true;
   document.body.classList.add("no-scroll");
+
+  mixBLendBeforeOpen.value = mixBLend.value;
+  if (mixBLend.value) mixBLend.value = false;
 };
 
 const closeModal = () => {
   show.value = false;
   document.body.classList.remove("no-scroll");
+
+  mixBLend.value = mixBLendBeforeOpen.value;
 };
 
 const scrollTo = (id: string) => {
@@ -90,33 +97,18 @@ const scrollTo = (id: string) => {
   element && element.scrollIntoView({ behavior: "smooth" });
 };
 
-const mixBLend = ref(false);
-
 onMounted(() => {
-  const options = {
-    // root: null,
-    rootMargin: "-1% 0% -99% 0%",
+  const callBackFunction = ([entry]: IntersectionObserverEntry[]) => {
+    mixBLend.value = !entry.isIntersecting;
   };
 
-  const sectionObserver = new IntersectionObserver(callBackFunction, options);
-
-  // const header = document.querySelector("header");
+  const sectionObserver = new IntersectionObserver(callBackFunction, {
+    rootMargin: "-1% 0% -99% 0%",
+  });
 
   const sections = document.querySelectorAll(".with-bg");
   for (let i = 0; i < sections.length; i++) {
     sectionObserver.observe(sections[i]);
-  }
-
-  function callBackFunction(entries) {
-    const [entry] = entries;
-    console.log(entry);
-    if (entry.isIntersecting) {
-      // header.classList.remove("mix-blend");
-      mixBLend.value = false;
-    } else {
-      // header.classList.add("mix-blend");
-      mixBLend.value = true;
-    }
   }
 });
 </script>
