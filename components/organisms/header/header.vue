@@ -1,7 +1,4 @@
 <template>
-  <!--  <div :class="[b(), b('logo')]">-->
-  <!--    <GaIconPrimaryLogo :class="b('icon')" />-->
-  <!--  </div>-->
   <header :class="[b(), b({ 'mix-blend': mixBLend })]">
     <GaIconPrimaryLogo :class="b('icon')" />
     <div :class="b('modal', { show })">
@@ -99,14 +96,14 @@ const scrollTo = (id: string) => {
 
 onMounted(() => {
   const callBackFunction = ([entry]: IntersectionObserverEntry[]) => {
-    mixBLend.value = !entry.isIntersecting;
+    mixBLend.value = entry.isIntersecting;
   };
 
   const sectionObserver = new IntersectionObserver(callBackFunction, {
     rootMargin: "-1% 0% -99% 0%",
   });
 
-  const sections = document.querySelectorAll(".with-bg");
+  const sections = document.querySelectorAll(".black-bg");
   for (let i = 0; i < sections.length; i++) {
     sectionObserver.observe(sections[i]);
   }

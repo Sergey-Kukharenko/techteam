@@ -1,5 +1,5 @@
 <template>
-  <section :class="b()" class="with-bg">
+  <section :class="b()">
     <GaImage
       :class-name="b('background-img')"
       :class="b('background')"

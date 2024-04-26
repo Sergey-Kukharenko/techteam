@@ -38,6 +38,7 @@ $nav-row-gap-mobile: 15px;
 
 // link
 $link-color-desktop: #fff;
+$link-color-inverse-desktop: #000;
 $link-font-weight: 500;
 $link-column-gap-desktop: 15px;
 $link-font-size-desktop: 14px;
@@ -109,15 +110,6 @@ $burger-close-top-mobile: -4px;
       right: 0;
       left: 0;
       z-index: 1;
-
-      &_mix-blend {
-        mix-blend-mode: difference;
-      }
-    }
-
-    &__logo {
-      height: 0;
-      mix-blend-mode: inherit;
     }
 
     &__icon {
@@ -224,6 +216,17 @@ $burger-close-top-mobile: -4px;
       width: $arrow-width;
       stroke: $link-color-desktop;
       margin-top: $arrow-margin-top;
+    }
+
+    &_mix-blend {
+      #{$block}__nav-link,
+      #{$block}__link {
+        color: $link-color-inverse-desktop;
+      }
+
+      #{$block}__arrow {
+        stroke: $link-color-inverse-desktop;
+      }
     }
 
     &__desktop {
