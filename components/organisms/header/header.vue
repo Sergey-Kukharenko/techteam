@@ -1,5 +1,5 @@
 <template>
-  <header :class="[b(), b({ 'mix-blend': mixBLend })]">
+  <header :class="[b(), b({ inverse })]">
     <GaIconPrimaryLogo :class="b('icon')" />
     <div :class="b('modal', { show })">
       <div :class="b('modal-header')">
@@ -69,22 +69,16 @@ const nav = [
 ];
 
 const show = ref<Boolean>(false);
-const mixBLend = ref(false);
-const mixBLendBeforeOpen = ref(false);
+const inverse = ref(false);
 
 const openModal = () => {
   show.value = true;
   document.body.classList.add("no-scroll");
-
-  mixBLendBeforeOpen.value = mixBLend.value;
-  if (mixBLend.value) mixBLend.value = false;
 };
 
 const closeModal = () => {
   show.value = false;
   document.body.classList.remove("no-scroll");
-
-  mixBLend.value = mixBLendBeforeOpen.value;
 };
 
 const scrollTo = (id: string) => {
@@ -96,11 +90,11 @@ const scrollTo = (id: string) => {
 
 onMounted(() => {
   const callBackFunction = ([entry]: IntersectionObserverEntry[]) => {
-    mixBLend.value = entry.isIntersecting;
+    inverse.value = entry.isIntersecting;
   };
 
   const sectionObserver = new IntersectionObserver(callBackFunction, {
-    rootMargin: "-1% 0% -99% 0%",
+    rootMargin: "-4.85% 0% -99% 0%",
   });
 
   const sections = document.querySelectorAll(".black-bg");

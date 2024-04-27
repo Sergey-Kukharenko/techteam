@@ -6,8 +6,8 @@
     fill="none"
     xmlns="http://www.w3.org/2000/svg"
   >
-    <rect y="14.1667" width="40" height="2.5" fill="white" />
-    <rect y="23.3333" width="40" height="2.5" fill="white" />
+    <rect y="14.1667" width="40" height="2.5" fill="currentColor" />
+    <rect y="23.3333" width="40" height="2.5" fill="currentColor" />
   </svg>
 </template>
 <script>
