@@ -7,10 +7,10 @@
           appearance="black"
           :class="[b('icon'), b('mobile')]"
         />
-        <GaIconPrimaryButtonCLose
-          :class="[b('burger'), b('mobile')]"
-          @click="closeModal"
-        />
+
+        <GaAction @click="closeModal" :class="b('mobile')">
+          <GaIconPrimaryButtonCLose :class="b('burger')" />
+        </GaAction>
       </div>
       <div :class="b('container')">
         <nav :class="b('nav')">
