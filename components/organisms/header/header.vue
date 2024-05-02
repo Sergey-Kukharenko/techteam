@@ -30,10 +30,9 @@
         </a>
       </div>
     </div>
-    <GaIconPrimaryButtonOpen
-      :class="[b('burger'), b('mobile')]"
-      @click="openModal"
-    />
+    <GaAction @click="openModal" :class="b('mobile')">
+      <GaIconPrimaryButtonOpen :class="b('burger')" />
+    </GaAction>
   </header>
 </template>
 
@@ -46,6 +45,7 @@ import {
   GaIconPrimaryButtonOpen,
   GaIconPrimaryButtonCLose,
 } from "@ga/icons";
+import { GaAction } from "~/components/molecules/action";
 
 defineOptions({
   name: "GaHeader",

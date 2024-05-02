@@ -374,6 +374,21 @@ $transition-speed: 0.25s;
     }
   }
 
+  @include bp-till($bp-tablet-large) {
+    &__burger {
+      width: $burger-width-mobile;
+      top: $burger-top-mobile;
+      color: $burger-open-color;
+      transition: color 0.25s ease-in-out;
+    }
+
+    &_inverse {
+      #{$block}__burger {
+        color: $burger-open-color-inverse;
+      }
+    }
+  }
+
   @include bp-till($bp-tablet) {
     & {
       padding: $header-padding-y-mobile $header-padding-x-mobile;
@@ -413,19 +428,6 @@ $transition-speed: 0.25s;
 
     &__arrow-long {
       width: $arrow-long-width-mobile;
-    }
-
-    &__burger {
-      width: $burger-width-mobile;
-      top: $burger-top-mobile;
-      color: $burger-open-color;
-      transition: color 0.25s ease-in-out;
-    }
-
-    &_inverse {
-      #{$block}__burger {
-        color: $burger-open-color-inverse;
-      }
     }
 
     &__modal {
