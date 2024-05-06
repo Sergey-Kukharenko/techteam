@@ -49,6 +49,7 @@ $content-row-gap-mobile: 9px;
 $title-color: color("surface", "inverse");
 $title-font-weight-bold: 500;
 $title-line-height: 22.4px;
+$title-margin-top-desktop-small: 10px;
 
 // description
 $description-font-weight: 400;
@@ -127,10 +128,22 @@ $description-max-width-mobile: 400px;
     }
   }
 
+  @include bp-from($bp-widescreen-small) {
+    &__container,
+    &__col {
+      align-items: center;
+    }
+  }
+
+  @include bp-between($bp-desktop-tilda, $bp-widescreen-small) {
+    &__title {
+      margin-top: $title-margin-top-desktop-small;
+    }
+  }
+
   @include bp-from($bp-desktop-tilda) {
     &__container {
       display: flex;
-      align-items: center;
       flex-wrap: wrap;
       margin: 0 auto;
       max-width: $grid-inner;
@@ -139,7 +152,6 @@ $description-max-width-mobile: 400px;
     &__col {
       width: $col-width-desktop;
       display: flex;
-      align-items: center;
     }
   }
 
