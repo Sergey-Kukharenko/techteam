@@ -1,63 +1,63 @@
-@use 'sass:map';
+@use "sass:map";
 
-@import '../../../button/styles/themes/view';
+@import "../../../button/styles/themes/view";
 
 $button-expanded-view-main: map.deep-merge(
-    $button-base-view,
-    (
-        color: (
-            default: color('surface', 'inverse'),
-            hover: color('surface', 'base'),
-            focus: color('surface', 'base'),
-            active: color('surface', 'base'),
-            disabled: color('surface', 'base'),
-        ),
-        background: (
-            default: color('surface', 'base'),
-            hover: color('surface', 'accent'),
-            focus: color('surface', 'accent'),
-            active: color('surface', 'accent-dark'),
-            disabled: color('surface', 'base-50'),
-        ),
-    )
+  $button-base-view,
+  (
+    color: (
+      default: color("surface", "inverse"),
+      hover: color("surface", "base"),
+      focus: color("surface", "base"),
+      active: color("surface", "base"),
+      disabled: color("surface", "base"),
+    ),
+    background: (
+      default: color("surface", "base"),
+      hover: color("surface", "inverse"),
+      focus: color("surface", "inverse"),
+      active: color("surface", "inverse"),
+      disabled: color("surface", "inverse"),
+    ),
+  )
 ) !default;
 
 $button-expanded-view-invert: map.deep-merge(
-    $button-base-view,
-    (
-        color: (
-            default: color('surface', 'base'),
-            hover: color('surface', 'inverse'),
-            focus: color('surface', 'inverse'),
-            active: color('surface', 'inverse'),
-            disabled: color('surface', 'base-50'),
-        ),
-        background: (
-            default: color('surface', 'accent'),
-            hover: color('surface', 'base'),
-            focus: color('surface', 'base'),
-            active: color('surface', 'base'),
-            disabled: color('surface', 'base-30'),
-        ),
-    )
+  $button-base-view,
+  (
+    color: (
+      default: color("surface", "base"),
+      hover: color("surface", "base"),
+      focus: color("surface", "inverse"),
+      active: color("surface", "inverse"),
+      disabled: color("surface", "base-50"),
+    ),
+    background: (
+      default: color("surface", "accent"),
+      hover: color("surface", "inverse"),
+      focus: color("surface", "inverse"),
+      active: color("surface", "inverse"),
+      disabled: color("surface", "inverse"),
+    ),
+  )
 ) !default;
 
 $button-expanded-view-line: map.deep-merge(
-    $button-base-view,
-    (
-        color: (
-            default: color('surface', 'base'),
-            hover: color('surface', 'accent'),
-            focus: color('surface', 'accent'),
-            active: color('surface', 'accent-dark'),
-            disabled: color('surface', 'base-50'),
-        ),
-        background: (
-            default: color('surface', 'base'),
-            hover: color('surface', 'base'),
-            focus: color('surface', 'base'),
-            active: color('surface', 'base'),
-            disabled: color('surface', 'base-50'),
-        ),
-    )
+  $button-base-view,
+  (
+    color: (
+      default: color("surface", "base"),
+      hover: color("surface", "accent"),
+      focus: color("surface", "accent"),
+      active: color("surface", "accent-dark"),
+      disabled: color("surface", "base-50"),
+    ),
+    background: (
+      default: color("surface", "base"),
+      hover: color("surface", "base"),
+      focus: color("surface", "base"),
+      active: color("surface", "base"),
+      disabled: color("surface", "base-50"),
+    ),
+  )
 ) !default;

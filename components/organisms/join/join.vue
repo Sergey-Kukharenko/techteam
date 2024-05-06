@@ -14,7 +14,7 @@
         <GaButtonExpanded
           target="_blank"
           rel="noopener noreferrer"
-          :href="nalogLinks.account"
+          href="https://job.goldapple.ru/"
           :icon-height="15"
           :icon-width="15"
           text="все вакансии gold apple"
@@ -33,15 +33,12 @@
 import { GaImage } from "~/components/atoms/image";
 import { GaButtonExpanded } from "~/components/molecules/button-expanded";
 import { GaIconPrimaryArrow } from "@ga/icons";
-import Header from "~/components/organisms/header/header.vue";
 
 defineOptions({
   name: "GaJoin",
 });
 
 const b = useBem();
-
-const { nalog: nalogLinks, markets: marketsLinks } = useAppConfig().links;
 
 const backgroundAttrs = {
   src: "/join/1920.jpg",

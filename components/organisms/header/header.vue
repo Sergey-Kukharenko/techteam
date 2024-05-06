@@ -23,7 +23,7 @@
           </a>
         </nav>
 
-        <a :class="b('link')" @click="scrollTo('join')">
+        <a href="https://job.goldapple.ru/" :class="b('link')">
           работа у нас
           <GaIconPrimaryArrow :class="[b('arrow'), b('desktop')]" />
           <GaIconPrimaryArrowLong :class="[b('arrow-long'), b('mobile')]" />
