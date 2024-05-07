@@ -75,6 +75,14 @@ const imgAttrs = {
       srcset: ["/our-products/375.jpg"],
       ext: "jpg",
       media: {
+        till: 414,
+      },
+    },
+    {
+      srcset: ["/our-products/414.jpg"],
+      ext: "jpg",
+      media: {
+        from: 414,
         till: 768,
       },
     },
