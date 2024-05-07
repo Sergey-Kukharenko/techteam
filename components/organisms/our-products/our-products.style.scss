@@ -131,6 +131,10 @@ $arrow-translate-x: -5px;
     &__content-title {
       font-family: $font-family-accent;
       font-weight: $title-font-weight;
+
+      & > span {
+        display: block;
+      }
     }
 
     &__content-description {
@@ -341,6 +345,10 @@ $arrow-translate-x: -5px;
       font-size: $content-title-font-size-tablet;
       line-height: $content-title-line-height-tablet;
       letter-spacing: $content-title-letter-tablet;
+
+      & > span {
+        display: inline;
+      }
     }
 
     &__content-description {

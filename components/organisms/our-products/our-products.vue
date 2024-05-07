@@ -52,7 +52,7 @@ const list = [
       src: "/our-products/our-products-desktop.jpg",
       alt: "our-products",
     },
-    title: "field service:<br> курьерская доставка",
+    title: "<span>field service:</span> <span>курьерская доставка</span>",
     description:
       "Мы разработали приложение для автоматизации работы курьеров. Вы сможете сократить время на обработку и доставку заказов, привлечь новых курьеров и расширить курьерскую сеть, повысив лояльность клиентов.",
   },
@@ -61,7 +61,7 @@ const list = [
       src: "/our-products/our-products-desktop.jpg",
       alt: "our-products",
     },
-    title: "field service:<br> курьерская доставка",
+    title: "<span>field service:</span> <span>курьерская доставка</span>",
     description:
       "Мы разработали приложение для автоматизации работы курьеров. Вы сможете сократить время на обработку и доставку заказов, привлечь новых курьеров и расширить курьерскую сеть, повысив лояльность клиентов.",
   },
