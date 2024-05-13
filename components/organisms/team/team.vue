@@ -94,11 +94,6 @@ const backgroundAttrs = {
     },
   ],
 };
-
-// const scrollTo = (id: string) => {
-//   const element = document.getElementById(id);
-//   element && element.scrollIntoView({ behavior: "smooth" });
-// };
 </script>
 
 <style src="./team.styles.scss" lang="scss" module />
