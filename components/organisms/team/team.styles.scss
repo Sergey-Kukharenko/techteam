@@ -76,6 +76,7 @@ $scroll-left-mobile: 20px;
       align-items: center;
       justify-content: center;
       text-align: center;
+      overflow: hidden;
     }
 
     &__background {
@@ -117,12 +118,29 @@ $scroll-left-mobile: 20px;
       margin: auto;
     }
 
-    &__scroll-icon {
+    &__scroll-button {
+      width: fit-content;
       position: absolute;
       left: 0;
       right: 0;
-      bottom: 0;
+      bottom: -7px;
       margin: auto;
+    }
+
+    &__scroll-icon {
+      animation: scroller 1.8s ease-out infinite;
+    }
+
+    @keyframes scroller {
+      0% {
+        transform: translateY(0);
+      }
+      50% {
+        transform: translateY(20px);
+      }
+      100% {
+        transform: translateY(0);
+      }
     }
   }
 
@@ -173,7 +191,7 @@ $scroll-left-mobile: 20px;
       flex-direction: column;
     }
 
-    &__scroll-icon {
+    &__scroll-button {
       margin: 0;
     }
   }
@@ -208,7 +226,7 @@ $scroll-left-mobile: 20px;
       line-height: $subtitle-line-height-tablet;
     }
 
-    &__scroll-icon {
+    &__scroll-button {
       left: $scroll-left-tablet;
     }
   }
@@ -251,7 +269,7 @@ $scroll-left-mobile: 20px;
       left: $subtitle-left-mobile;
     }
 
-    &__scroll-icon {
+    &__scroll-button {
       left: $scroll-left-mobile;
     }
   }

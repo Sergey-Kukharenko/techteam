@@ -17,13 +17,15 @@
       </div>
     </div>
 
-    <img src="/scroll.svg" :class="b('scroll-icon')" alt="scroll" />
+    <GaAction :class="b('scroll-button')" @click="scrollTo('our-products')">
+      <img src="/scroll.svg" :class="b('scroll-icon')" alt="scroll" />
+    </GaAction>
   </section>
 </template>
 
 <script setup lang="ts">
 import { GaImage } from "~/components/atoms/image";
-import Header from "~/components/organisms/header/header.vue";
+import { GaAction } from "~/components/molecules/action";
 
 defineOptions({
   name: "GaTeam",
@@ -90,6 +92,11 @@ const backgroundAttrs = {
       },
     },
   ],
+};
+
+const scrollTo = (id: string) => {
+  const element = document.getElementById(id);
+  element && element.scrollIntoView({ behavior: "smooth" });
 };
 </script>
 
