@@ -83,9 +83,7 @@ const closeModal = () => {
 
 const scrollTo = (id: string) => {
   show.value && closeModal();
-
-  const element = document.getElementById(id);
-  element && element.scrollIntoView({ behavior: "smooth" });
+  useScrollTo(id);
 };
 
 onMounted(() => {

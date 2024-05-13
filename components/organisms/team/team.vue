@@ -17,7 +17,7 @@
       </div>
     </div>
 
-    <GaAction :class="b('scroll-button')" @click="scrollTo('our-products')">
+    <GaAction :class="b('scroll-button')" @click="useScrollTo('our-products')">
       <img src="/scroll.svg" :class="b('scroll-icon')" alt="scroll" />
     </GaAction>
   </section>
@@ -26,6 +26,7 @@
 <script setup lang="ts">
 import { GaImage } from "~/components/atoms/image";
 import { GaAction } from "~/components/molecules/action";
+import { useScrollTo } from "~/composables/useScrollTo";
 
 defineOptions({
   name: "GaTeam",
@@ -94,10 +95,10 @@ const backgroundAttrs = {
   ],
 };
 
-const scrollTo = (id: string) => {
-  const element = document.getElementById(id);
-  element && element.scrollIntoView({ behavior: "smooth" });
-};
+// const scrollTo = (id: string) => {
+//   const element = document.getElementById(id);
+//   element && element.scrollIntoView({ behavior: "smooth" });
+// };
 </script>
 
 <style src="./team.styles.scss" lang="scss" module />
