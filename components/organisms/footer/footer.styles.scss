@@ -59,6 +59,9 @@ $description-font-size: 14px;
 $description-row-gap-mobile: 7px;
 $description-max-width-mobile: 400px;
 
+// description-parts
+$description-parts-gap-desktop-small: 4px;
+
 #{$block} {
   @include bp-all {
     & {
@@ -161,6 +164,21 @@ $description-max-width-mobile: 400px;
     }
   }
 
+  @include bp-from($bp-desktop-small) {
+    &__description-parts {
+      display: flex;
+      gap: $description-parts-gap-desktop-small;
+    }
+  }
+
+  @include bp-till($bp-desktop-small) {
+    &__description-parts {
+      > span {
+        display: block;
+      }
+    }
+  }
+
   @include bp-between($bp-tablet, $bp-desktop-small) {
     & {
       padding: $footer-padding-top-tablet $footer-padding-x-tablet
@@ -210,6 +228,10 @@ $description-max-width-mobile: 400px;
       flex-direction: column;
       row-gap: $description-row-gap-mobile;
       font-size: $description-font-size;
+    }
+
+    &__description-parts {
+      gap: 2px;
     }
 
     &__slash {

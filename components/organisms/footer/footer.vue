@@ -19,8 +19,10 @@
         <div :class="b('content')">
           <div :class="b('title')">юридический адрес</div>
           <div :class="b('description')">
-            620014, Свердловская область, г. Екатеринбург, ул. Сакко и Ванцетти,
-            д. 62, оф. 1
+            <div :class="b('description-parts')">
+              <span>620014, Свердловская область,</span>
+              <span>г. Екатеринбург, ул. Сакко и Ванцетти, д. 62, оф. 1</span>
+            </div>
           </div>
         </div>
       </div>
